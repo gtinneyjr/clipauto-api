@@ -1,0 +1,165 @@
+"""
+YouTube Data API v3 service.
+
+Responsibilities:
+- Resolve a channel URL/handle → channel ID
+- Fetch channel metadata
+- Poll for new video uploads since last check
+- Fetch full video details (duration, description)
+"""
+
+import httpx
+import re
+from datetime import datetime, timezone
+from typing import Optional
+from app.config import get_settings
+
+settings = get_settings()
+YT_BASE = "https://www.googleapis.com/youtube/v3"
+
+
+class YouTubeService:
+    def __init__(self):
+        self.api_key = settings.youtube_api_key
+        if not self.api_key:
+            raise RuntimeError("YOUTUBE_API_KEY is not set in .env")
+
+    # ── Channel resolution ────────────────────────────────────────────────────
+
+    async def resolve_channel(self, url_or_handle: str) -> dict:
+        """
+        Accept any of these formats and return channel metadata:
+          https://youtube.com/@mkbhd
+          https://youtube.com/channel/UCBcRF18a7Qf58cCRy5xuWwQ
+          @mkbhd
+          UCBcRF18a7Qf58cCRy5xuWwQ
+        """
+        channel_id = self._extract_channel_id(url_or_handle)
+        handle     = self._extract_handle(url_or_handle)
+
+        async with httpx.AsyncClient() as client:
+            if channel_id:
+                params = {"part": "snippet,statistics", "id": channel_id, "key": self.api_key}
+            elif handle:
+                params = {"part": "snippet,statistics", "forHandle": handle.lstrip("@"), "key": self.api_key}
+            else:
+                raise ValueError(f"Cannot parse channel from: {url_or_handle}")
+
+            resp = await client.get(f"{YT_BASE}/channels", params=params)
+            resp.raise_for_status()
+            data = resp.json()
+
+        items = data.get("items", [])
+        if not items:
+            raise ValueError("YouTube channel not found")
+
+        item    = items[0]
+        snippet = item["snippet"]
+        return {
+            "youtube_channel_id": item["id"],
+            "channel_handle":     snippet.get("customUrl", handle or item["id"]),
+            "channel_title":      snippet["title"],
+            "thumbnail_url":      snippet["thumbnails"].get("medium", {}).get("url"),
+        }
+
+    # ── Upload detection ──────────────────────────────────────────────────────
+
+    async def get_new_videos(
+        self,
+        channel_id: str,
+        since: Optional[datetime] = None,
+        max_results: int = 10,
+    ) -> list[dict]:
+        """
+        Return videos uploaded to channel_id after `since`.
+        Uses the search endpoint (costs 100 quota units per call).
+        """
+        params: dict = {
+            "part":       "snippet",
+            "channelId":  channel_id,
+            "order":      "date",
+            "type":       "video",
+            "maxResults": max_results,
+            "key":        self.api_key,
+        }
+        if since:
+            params["publishedAfter"] = since.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        async with httpx.AsyncClient() as client:
+            resp = await client.get(f"{YT_BASE}/search", params=params)
+            resp.raise_for_status()
+            items = resp.json().get("items", [])
+
+        if not items:
+            return []
+
+        # Enrich with duration from videos endpoint
+        video_ids = [i["id"]["videoId"] for i in items]
+        details   = await self._get_video_details(video_ids)
+        detail_map = {d["id"]: d for d in details}
+
+        videos = []
+        for item in items:
+            vid_id  = item["id"]["videoId"]
+            snippet = item["snippet"]
+            detail  = detail_map.get(vid_id, {})
+            videos.append({
+                "youtube_video_id": vid_id,
+                "title":            snippet["title"],
+                "description":      snippet.get("description", ""),
+                "published_at":     datetime.fromisoformat(
+                    snippet["publishedAt"].replace("Z", "+00:00")
+                ),
+                "duration_seconds": detail.get("duration_seconds", 0),
+                "thumbnail_url":    snippet["thumbnails"].get("medium", {}).get("url"),
+            })
+        return videos
+
+    # ── Video details ─────────────────────────────────────────────────────────
+
+    async def _get_video_details(self, video_ids: list[str]) -> list[dict]:
+        params = {
+            "part":  "contentDetails",
+            "id":    ",".join(video_ids),
+            "key":   self.api_key,
+        }
+        async with httpx.AsyncClient() as client:
+            resp = await client.get(f"{YT_BASE}/videos", params=params)
+            resp.raise_for_status()
+            items = resp.json().get("items", [])
+
+        results = []
+        for item in items:
+            duration = self._parse_iso_duration(item["contentDetails"]["duration"])
+            results.append({"id": item["id"], "duration_seconds": duration})
+        return results
+
+    # ── Helpers ───────────────────────────────────────────────────────────────
+
+    @staticmethod
+    def _extract_channel_id(text: str) -> Optional[str]:
+        m = re.search(r"youtube\.com/channel/([A-Za-z0-9_-]{24})", text)
+        if m:
+            return m.group(1)
+        if re.match(r"^UC[A-Za-z0-9_-]{22}$", text.strip()):
+            return text.strip()
+        return None
+
+    @staticmethod
+    def _extract_handle(text: str) -> Optional[str]:
+        m = re.search(r"youtube\.com/(@[^/?&]+)", text)
+        if m:
+            return m.group(1)
+        if text.strip().startswith("@"):
+            return text.strip()
+        return None
+
+    @staticmethod
+    def _parse_iso_duration(iso: str) -> int:
+        """Convert PT1H2M3S → seconds."""
+        pattern = r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?"
+        m = re.match(pattern, iso)
+        if not m:
+            return 0
+        h, mn, s = (int(x or 0) for x in m.groups())
+        return h * 3600 + mn * 60 + s

@@ -1,0 +1,143 @@
+"""
+AI scoring service.
+
+Uses OpenAI (or any LLM) to:
+1. Analyse a video transcript → rank moments by viral potential
+2. Return timestamped clip suggestions with titles and scores
+"""
+
+import json
+import httpx
+from app.config import get_settings
+
+settings = get_settings()
+
+SYSTEM_PROMPT = """You are an expert short-form content strategist.
+Given a video transcript with timestamps, identify the best moments to clip for TikTok, YouTube Shorts, and Instagram Reels.
+
+For each clip suggestion return:
+- start_second (float)
+- end_second   (float)
+- title        (punchy hook, max 60 chars)
+- viral_score  (0.0–100.0)
+- reason       (1 sentence why this moment is compelling)
+
+Prioritise: strong hooks, emotional peaks, surprising facts, quotable lines, clear narrative arcs.
+Avoid: mid-sentence cuts, slow intros, tangential digressions.
+
+Respond ONLY with a JSON array. No markdown, no preamble."""
+
+
+class ScoringService:
+    def __init__(self):
+        self.api_key = settings.openai_api_key
+        self.base_url = "https://api.openai.com/v1"
+
+    async def score_transcript(
+        self,
+        transcript: list[dict],   # [{start, end, text}, ...]
+        clip_length_seconds: int = 40,
+        max_clips: int = 5,
+    ) -> list[dict]:
+        """
+        Send transcript to LLM and get back clip suggestions ranked by viral score.
+        Falls back to heuristic scoring if OpenAI key not set.
+        """
+        if not self.api_key:
+            return self._heuristic_score(transcript, clip_length_seconds, max_clips)
+
+        formatted = self._format_transcript(transcript)
+        user_msg = (
+            f"Video transcript (with timestamps):\n\n{formatted}\n\n"
+            f"Suggest up to {max_clips} clips of approximately {clip_length_seconds} seconds each. "
+            f"Return JSON array only."
+        )
+
+        async with httpx.AsyncClient(timeout=60) as client:
+            resp = await client.post(
+                f"{self.base_url}/chat/completions",
+                headers={"Authorization": f"Bearer {self.api_key}"},
+                json={
+                    "model": "gpt-4o-mini",
+                    "messages": [
+                        {"role": "system", "content": SYSTEM_PROMPT},
+                        {"role": "user",   "content": user_msg},
+                    ],
+                    "response_format": {"type": "json_object"},
+                    "temperature": 0.3,
+                },
+            )
+            resp.raise_for_status()
+
+        raw = resp.json()["choices"][0]["message"]["content"]
+        clips = json.loads(raw)
+        # Normalise — API may return {"clips": [...]} or just [...]
+        if isinstance(clips, dict):
+            clips = next(iter(clips.values()))
+
+        return sorted(clips, key=lambda c: c["viral_score"], reverse=True)[:max_clips]
+
+    # ── Heuristic fallback (no API key needed) ────────────────────────────────
+
+    def _heuristic_score(
+        self,
+        transcript: list[dict],
+        clip_length: int,
+        max_clips: int,
+    ) -> list[dict]:
+        """
+        Simple keyword + segment-length heuristic.
+        Scores segments higher if they contain high-engagement trigger words.
+        """
+        HOOKS = {
+            "never", "always", "secret", "actually", "wrong", "truth", "real",
+            "mistake", "revealed", "shocking", "changed", "everything", "worst",
+            "best", "finally", "insane", "crazy", "honestly", "nobody", "imagine",
+        }
+
+        clips = []
+        total = len(transcript)
+
+        for i, seg in enumerate(transcript):
+            text   = seg["text"].lower()
+            start  = seg["start"]
+            end    = min(start + clip_length, transcript[-1]["end"])
+
+            # Gather text in window
+            window_text = " ".join(
+                s["text"].lower() for s in transcript[i:]
+                if s["start"] <= end
+            )
+            words  = set(window_text.split())
+            score  = len(words & HOOKS) * 12          # hook words
+            score += min(len(window_text.split()) / 5, 20)   # density bonus
+            score  = min(score, 99)
+
+            # De-duplicate: skip if too close to a prior suggestion
+            if any(abs(c["start_second"] - start) < clip_length * 0.5 for c in clips):
+                continue
+
+            clips.append({
+                "start_second": round(start, 1),
+                "end_second":   round(end, 1),
+                "title":        self._make_title(seg["text"]),
+                "viral_score":  round(score, 1),
+                "reason":       "Heuristic: high-engagement language detected",
+            })
+
+        clips.sort(key=lambda c: c["viral_score"], reverse=True)
+        return clips[:max_clips]
+
+    @staticmethod
+    def _format_transcript(transcript: list[dict]) -> str:
+        lines = []
+        for seg in transcript:
+            t = int(seg["start"])
+            h, m, s = t // 3600, (t % 3600) // 60, t % 60
+            lines.append(f"[{h:02d}:{m:02d}:{s:02d}] {seg['text'].strip()}")
+        return "\n".join(lines)
+
+    @staticmethod
+    def _make_title(text: str, max_len: int = 60) -> str:
+        clean = text.strip().rstrip(".,;:")
+        return (clean[:max_len - 1] + "…") if len(clean) > max_len else clean
