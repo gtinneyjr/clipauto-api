@@ -1,0 +1,19 @@
+import type { Context, Config } from "@netlify/functions";
+
+const BACKEND = Netlify.env.get("BACKEND_URL") ?? "http://localhost:8000";
+
+export default async (req: Request, context: Context) => {
+  const url = new URL(req.url);
+  const path = url.pathname.replace("/api/auth", "/auth");
+  const target = `${BACKEND}${path}${url.search}`;
+
+  const res = await fetch(target, { method: req.method });
+  const data = await res.text();
+
+  return new Response(data, {
+    status: res.status,
+    headers: { "Content-Type": "application/json" },
+  });
+};
+
+export const config: Config = { path: "/api/auth*" };

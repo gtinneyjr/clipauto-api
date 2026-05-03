@@ -1,0 +1,22 @@
+import type { Context, Config } from "@netlify/functions";
+
+const BACKEND = Netlify.env.get("BACKEND_URL") ?? "http://localhost:8000";
+
+export default async (req: Request, context: Context) => {
+  const url = new URL(req.url);
+  const path = url.pathname.replace("/api/channels", "/youtube");
+  const target = `${BACKEND}${path}${url.search}`;
+
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  const body = req.method !== "GET" && req.method !== "HEAD" ? await req.text() : undefined;
+
+  const res = await fetch(target, { method: req.method, headers, body });
+  const data = await res.text();
+
+  return new Response(data, {
+    status: res.status,
+    headers: { "Content-Type": "application/json" },
+  });
+};
+
+export const config: Config = { path: "/api/channels*" };
