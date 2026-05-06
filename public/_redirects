@@ -1,0 +1,9 @@
+/api/channels/*  /.netlify/functions/channels/:splat  200
+/api/channels    /.netlify/functions/channels         200
+/api/clips/*     /.netlify/functions/clips/:splat     200
+/api/clips       /.netlify/functions/clips            200
+/api/auth/*      /.netlify/functions/auth/:splat      200
+/api/trending    /.netlify/functions/trending         200
+/api/platforms   /.netlify/functions/platforms        200
+/api/*           /.netlify/functions/api/:splat       200
+/*               /index.html                          200

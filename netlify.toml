@@ -1,19 +1,48 @@
-import type { Context, Config } from "@netlify/functions";
+[build]
+  publish = "public"
+  functions = "netlify/functions"
 
-const BACKEND = Netlify.env.get("BACKEND_URL") ?? "http://localhost:8000";
+[[redirects]]
+  from = "/api/channels/*"
+  to = "/.netlify/functions/channels/:splat"
+  status = 200
 
-export default async (req: Request, context: Context) => {
-  const url = new URL(req.url);
-  const path = url.pathname.replace("/api/auth", "/auth");
-  const target = `${BACKEND}${path}${url.search}`;
+[[redirects]]
+  from = "/api/channels"
+  to = "/.netlify/functions/channels"
+  status = 200
 
-  const res = await fetch(target, { method: req.method });
-  const data = await res.text();
+[[redirects]]
+  from = "/api/clips/*"
+  to = "/.netlify/functions/clips/:splat"
+  status = 200
 
-  return new Response(data, {
-    status: res.status,
-    headers: { "Content-Type": "application/json" },
-  });
-};
+[[redirects]]
+  from = "/api/clips"
+  to = "/.netlify/functions/clips"
+  status = 200
 
-export const config: Config = { path: "/api/auth*" };
+[[redirects]]
+  from = "/api/auth/*"
+  to = "/.netlify/functions/auth/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/api/trending"
+  to = "/.netlify/functions/trending"
+  status = 200
+
+[[redirects]]
+  from = "/api/platforms"
+  to = "/.netlify/functions/platforms"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

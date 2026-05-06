@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#080809">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiPgogIDxkZWZzPgogICAgPHN0eWxlPkBpbXBvcnQgdXJsKCdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PVN5bmU6d2dodEA4MDAmYW1wO2Rpc3BsYXk9c3dhcCcpOzwvc3R5bGU+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTQiIGZpbGw9IiMwMDAwMDAiLz4KICA8dGV4dAogICAgeD0iNTAiCiAgICB5PSI1MCIKICAgIGZvbnQtZmFtaWx5PSJTeW5lLCBBcmlhbCBCbGFjaywgc2Fucy1zZXJpZiIKICAgIGZvbnQtc2l6ZT0iNTgiCiAgICBmb250LXdlaWdodD0iODAwIgogICAgdGV4dC1hbmNob3I9Im1pZGRsZSIKICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgbGV0dGVyLXNwYWNpbmc9Ii0yIj4KICAgIDx0c3BhbiBmaWxsPSIjMGFmZjk5Ij5DPC90c3Bhbj48dHNwYW4gZmlsbD0iI2ZmZmZmZiI+QTwvdHNwYW4+CiAgPC90ZXh0Pgo8L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiPgogIDxkZWZzPgogICAgPHN0eWxlPkBpbXBvcnQgdXJsKCdodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PVN5bmU6d2dodEA4MDAmYW1wO2Rpc3BsYXk9c3dhcCcpOzwvc3R5bGU+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMTQiIGZpbGw9IiMwMDAwMDAiLz4KICA8dGV4dAogICAgeD0iNTAiCiAgICB5PSI1MCIKICAgIGZvbnQtZmFtaWx5PSJTeW5lLCBBcmlhbCBCbGFjaywgc2Fucy1zZXJpZiIKICAgIGZvbnQtc2l6ZT0iNTgiCiAgICBmb250LXdlaWdodD0iODAwIgogICAgdGV4dC1hbmNob3I9Im1pZGRsZSIKICAgIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIgogICAgbGV0dGVyLXNwYWNpbmc9Ii0yIj4KICAgIDx0c3BhbiBmaWxsPSIjMGFmZjk5Ij5DPC90c3Bhbj48dHNwYW4gZmlsbD0iI2ZmZmZmZiI+QTwvdHNwYW4+CiAgPC90ZXh0Pgo8L3N2Zz4=">
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="https://i.ytimg.com">
+<link rel="dns-prefetch" href="https://img.youtube.com">
+<meta name="description" content="ClipAuto.ai — Automated YouTube clipping. AI clips your best moments and posts to TikTok, Shorts and Reels on autopilot.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClipAuto.ai — Automated YouTube Clipping</title>
+<!-- Preconnect to font CDNs before browser discovers them -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Load fonts async — display=swap prevents invisible text during load -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript></noscript>
+<style>@layer base{:root{font-synthesis:none}}body{font-family:'DM Sans',system-ui,sans-serif}.logo,.section-title,h1,h2,h3,.plan-name,.stat-num,.metric-val,.hiw-detail-title,.plans-main-title{font-family:'Syne','Arial Black',sans-serif}</style>
+<style>*{box-sizing:border-box;margin:0;padding:0}:root{--brand:#0aff99;--brand-dim:rgba(10,255,153,0.12);--brand-border:rgba(10,255,153,0.25);--bg:#080809;--s1:#0f0f12;--s2:#16161b;--s3:#1d1d24;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.11);--text:#efefef;--muted:#666;--muted2:#999;--red:#ff4545;--amber:#ffb830;--blue:#4fc3f7}html{scroll-behavior:smooth}body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);min-height:100vh;overflow-x:hidden}::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--s1)}::-webkit-scrollbar-thumb{background:var(--s3);border-radius:2px}nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2rem;background:rgba(8,8,9,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}.logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;letter-spacing:-.5px;text-decoration:none;color:var(--text)}.logo span{color:var(--brand)}.nav-links{display:flex;gap:1.5rem;align-items:center}.nav-links a{font-size:13px;color:var(--muted2);text-decoration:none;cursor:pointer;transition:color .2s;letter-spacing:.2px}.nav-links a:hover,.nav-links a.active{color:var(--text)}.nav-auth{display:flex;align-items:center;gap:8px}.user-avatar{width:34px;height:34px;border-radius:50%;background:var(--brand-dim);border:1.5px solid var(--brand-border);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s}.user-avatar:hover{background:rgba(10,255,153,.2)}.user-avatar svg{color:var(--brand)}.user-menu{position:absolute;top:44px;right:0;background:var(--s2);border:1px solid var(--border2);border-radius:12px;padding:.5rem;min-width:190px;box-shadow:0 16px 48px rgba(0,0,0,.5);display:none;z-index:300}.user-menu.open{display:block}.user-menu-header{padding:.6rem .75rem;border-bottom:1px solid var(--border);margin-bottom:.35rem}.user-menu-email{font-size:11px;color:var(--muted2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}.user-menu-name{font-size:13px;font-weight:500}.user-menu-item{display:flex;align-items:center;gap:8px;padding:.55rem .75rem;border-radius:7px;font-size:13px;cursor:pointer;transition:background .15s;color:var(--text);width:100%;border:none;background:none;font-family:"DM Sans",sans-serif;text-align:left}.user-menu-item:hover{background:var(--s3)}.user-menu-item.danger{color:var(--red)}.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}.modal-overlay.open{opacity:1;pointer-events:all}.modal{background:var(--s1);border:1px solid var(--border2);border-radius:16px;padding:2rem;width:100%;max-width:400px;position:relative;transform:translateY(12px);transition:transform .25s;margin:1rem}.modal-overlay.open .modal{transform:translateY(0)}.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--muted2);cursor:pointer;font-size:18px;line-height:1;padding:.25rem}.modal-close:hover{color:var(--text)}.modal-logo{font-family:"Syne",sans-serif;font-size:20px;font-weight:800;margin-bottom:.25rem}.modal-logo span{color:var(--brand)}.modal-sub{font-size:13px;color:var(--muted2);margin-bottom:1.5rem}.modal-tabs{display:flex;background:var(--s3);border-radius:8px;padding:3px;margin-bottom:1.25rem}.modal-tab{flex:1;padding:.45rem;border-radius:6px;border:none;background:none;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:500;cursor:pointer;color:var(--muted2);transition:all .15s}.modal-tab.active{background:var(--s2);color:var(--text);border:1px solid var(--border2)}.modal-field{margin-bottom:.9rem}.modal-field label{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted2);margin-bottom:5px}.modal-field input{width:100%;background:var(--s3);border:1px solid var(--border2);color:var(--text);padding:.7rem 1rem;border-radius:8px;font-family:"DM Sans",sans-serif;font-size:14px;outline:none;transition:border .2s}.modal-field input:focus{border-color:var(--brand)}.modal-field input::placeholder{color:#3a3a44}.modal-divider{display:flex;align-items:center;gap:.75rem;margin:1.1rem 0;color:var(--muted);font-size:12px}.modal-divider::before,.modal-divider::after{content:"";flex:1;height:1px;background:var(--border2)}.btn-google{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:.7rem;border-radius:8px;border:1px solid var(--border2);background:var(--s2);color:var(--text);font-family:"DM Sans",sans-serif;font-size:14px;cursor:pointer;transition:all .15s;font-weight:500}.btn-google:hover{background:var(--s3)}.modal-footer{text-align:center;margin-top:1rem;font-size:12px;color:var(--muted2)}.modal-footer a{color:var(--brand);cursor:pointer}.modal-footer a:hover{text-decoration:underline}.modal-error{background:rgba(255,69,69,.1);border:1px solid rgba(255,69,69,.2);color:var(--red);padding:.6rem .85rem;border-radius:7px;font-size:12px;margin-bottom:.9rem;display:none}.modal-error.show{display:block}.forgot-link{color:var(--brand);cursor:pointer;font-size:11px}.forgot-link:hover{text-decoration:underline}.btn{border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s;border-radius:8px;font-size:13px;font-weight:500}.btn-primary{background:var(--brand);color:#000;padding:.5rem 1.2rem}.btn-primary:hover{background:#00e888;transform:translateY(-1px)}.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);padding:.5rem 1.2rem}.btn-ghost:hover{background:var(--s3)}.btn-sm{padding:.35rem .9rem;font-size:12px}.btn-danger{background:rgba(255,69,69,.1);color:var(--red);border:1px solid rgba(255,69,69,.2)}.btn-danger:hover{background:rgba(255,69,69,.2)}.page{display:none;padding-top:60px;min-height:100vh}.page.active{display:block}.container{max-width:1000px;margin:0 auto;padding:2.5rem 1.5rem}.hero{text-align:center;padding:5rem 1.5rem 3rem;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(10,255,153,.05) 0%,transparent 70%)}.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--brand-dim);border:1px solid var(--brand-border);color:var(--brand);padding:4px 14px;border-radius:999px;font-size:11px;font-weight:500;letter-spacing:.8px;margin-bottom:1.5rem}.pulse{width:6px;height:6px;border-radius:50%;background:var(--brand);animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}h1{font-family:'Syne',sans-serif;font-size:clamp(34px,5vw,62px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:1rem}h1 em{font-style:normal;color:var(--brand)}.hero-sub{font-size:16px;color:var(--muted2);max-width:480px;margin:0 auto 2.5rem;line-height:1.65}.hero-ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.btn-xl{padding:.8rem 2rem;font-size:15px;border-radius:10px}.stats{display:flex;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.stat{flex:1;text-align:center;padding:1.5rem 1rem;border-right:1px solid var(--border)}.stat:last-child{border-right:none}.stat-num{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--brand)}.stat-label{font-size:12px;color:var(--muted);margin-top:3px;letter-spacing:.3px}.section-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;margin-bottom:.35rem}.section-sub{font-size:14px;color:var(--muted2);margin-bottom:2rem}.eyebrow{font-size:10px;font-weight:500;color:var(--brand);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem}.card{background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:1.5rem}.card+.card{margin-top:1rem}.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}.card-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700}.field{margin-bottom:1rem}.field label{display:block;font-size:12px;color:var(--muted2);margin-bottom:6px;letter-spacing:.3px}input[type=text],input[type=url],input[type=email],select,textarea{width:100%;background:var(--s3);border:1px solid var(--border2);color:var(--text);padding:.65rem 1rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border .2s;-webkit-appearance:none}input:focus,select:focus,textarea:focus{border-color:var(--brand)}input::placeholder{color:#3a3a44}select option{background:var(--s2)}.input-row{display:flex;gap:8px}.input-row input{flex:1}.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border)}.toggle-row:last-child{border-bottom:none}.toggle-label{font-size:13px}.toggle-sub{font-size:11px;color:var(--muted);margin-top:2px}.toggle{position:relative;width:36px;height:20px;flex-shrink:0}.toggle input{opacity:0;width:0;height:0}.toggle-slider{position:absolute;inset:0;background:var(--s3);border-radius:999px;border:1px solid var(--border2);cursor:pointer;transition:.2s}.toggle-slider:before{content:'';position:absolute;width:14px;height:14px;left:2px;top:2px;background:var(--muted);border-radius:50%;transition:.2s}.toggle input:checked+.toggle-slider{background:var(--brand-dim);border-color:var(--brand-border)}.toggle input:checked+.toggle-slider:before{background:var(--brand);transform:translateX(16px)}.platform-grid{display:flex;gap:8px;flex-wrap:wrap;margin-top:.75rem}.platform-pill{display:flex;align-items:center;gap:7px;padding:.45rem 1rem;border-radius:999px;font-size:13px;cursor:pointer;transition:all .2s;border:1px solid var(--border2);background:var(--s2);user-select:none}.platform-pill.on{border-color:var(--brand-border);background:var(--brand-dim);color:var(--brand)}.platform-pill.on .pcheck{opacity:1}.pcheck{font-size:10px;opacity:0;transition:.15s}.picon{width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}.channel-item{display:flex;align-items:center;gap:12px;padding:1rem;background:var(--s2);border:1px solid var(--border);border-radius:10px;margin-bottom:.6rem;transition:border .2s}.channel-item:hover{border-color:var(--border2)}.channel-avatar{width:40px;height:40px;border-radius:50%;background:var(--s3);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:var(--brand);flex-shrink:0}.channel-info{flex:1;min-width:0}.channel-name{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.channel-handle{font-size:12px;color:var(--muted2);margin-top:1px}.channel-badges{display:flex;gap:6px;margin-top:5px}.badge{font-size:10px;padding:2px 8px;border-radius:999px;font-weight:500}.badge-green{background:rgba(10,255,153,.1);color:var(--brand);border:1px solid var(--brand-border)}.badge-muted{background:var(--s3);color:var(--muted2);border:1px solid var(--border)}.badge-red{background:rgba(255,69,69,.1);color:var(--red);border:1px solid rgba(255,69,69,.2)}.clips-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem}.clip-card{background:var(--s2);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s}.clip-card:hover{border-color:var(--border2);transform:translateY(-2px)}.clip-thumb{height:120px;display:flex;align-items:center;justify-content:center;position:relative;background:#0d1a2e;overflow:hidden}.clip-thumb.t2{background:#1a0d2e}.clip-thumb.t3{background:#0d1f0d}.clip-thumb.t4{background:#1f1a0d}.clip-thumb img.thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s}.clip-card:hover .thumb-img{opacity:1}.clip-thumb .clip-thumb .viral-tag{z-index:3}.play-btn{width:38px;height:38px;border-radius:50%;background:rgba(10,255,153,.9);display:flex;align-items:center;justify-content:center;position:relative;z-index:2}.play-btn svg{margin-left:3px}.viral-tag{position:absolute;top:7px;right:7px;font-size:9px;font-weight:700;padding:2px 7px;border-radius:999px;letter-spacing:.5px}.viral-tag.hot{background:var(--red);color:#fff}.viral-tag.trending{background:var(--amber);color:#000}.clip-info{padding:.7rem}.clip-title{font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:5px}.clip-meta{display:flex;justify-content:space-between;align-items:center}.clip-dur{font-size:11px;color:var(--muted2)}.score-wrap{display:flex;align-items:center;gap:4px}.score-bar{width:36px;height:3px;background:var(--s3);border-radius:999px}.score-fill{height:100%;border-radius:999px;background:var(--brand)}.score-num{font-size:10px;color:var(--brand);font-weight:500}.clip-yt-link{display:block;font-size:10px;color:var(--brand);margin-top:5px;text-decoration:none;opacity:.8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.clip-yt-link:hover{opacity:1;text-decoration:underline}.metric-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.85rem;margin-bottom:1.5rem}.metric-card{background:var(--s2);border:1px solid var(--border);border-radius:10px;padding:1rem}.metric-label{font-size:11px;color:var(--muted2);margin-bottom:6px;letter-spacing:.3px}.metric-val{font-family:'Syne',sans-serif;font-size:24px;font-weight:800}.metric-val.green{color:var(--brand)}.metric-delta{font-size:11px;color:var(--brand);margin-top:3px}.metric-delta.muted{color:var(--muted2)}.bar-chart{display:flex;flex-direction:column;gap:.85rem}.bar-row{}.bar-label-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px}.bar-track{background:var(--s3);border-radius:999px;height:5px}.bar-fill{height:100%;border-radius:999px;transition:width 1s ease}.conn-grid{display:flex;flex-direction:column;gap:.6rem}.conn-item{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.1rem;background:var(--s2);border:1px solid var(--border);border-radius:10px}.conn-left{display:flex;align-items:center;gap:10px}.conn-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}.conn-name{font-size:13px;font-weight:500}.conn-status{font-size:11px;margin-top:2px}.conn-status.connected{color:var(--brand)}.conn-status.disconnected{color:var(--muted)}.log{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.75rem;font-family:'DM Mono',monospace;font-size:11px;max-height:120px;overflow-y:auto;line-height:1.7}.log-line{color:#555}.log-line.ok{color:var(--brand)}.log-line.info{color:var(--blue)}.log-line.warn{color:var(--amber)}.log-line.err{color:var(--red)}.prog-wrap{margin-top:1rem;display:none}.prog-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}.prog-label{font-size:13px;font-weight:500;display:flex;align-items:center;gap:6px}.prog-pct{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--brand)}.prog-track{background:var(--s3);border-radius:999px;height:4px}.prog-fill{height:100%;border-radius:999px;background:var(--brand);transition:width .4s ease;width:0%}.empty{text-align:center;padding:3rem 1rem}.empty-icon{font-size:2.5rem;margin-bottom:.75rem;opacity:.3}.empty-title{font-size:15px;font-weight:500;margin-bottom:.35rem}.empty-sub{font-size:13px;color:var(--muted2)}#toast{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;display:flex;flex-direction:column;gap:.5rem}.toast-item{background:var(--s2);border:1px solid var(--border2);border-radius:10px;padding:.7rem 1.1rem;font-size:13px;display:flex;align-items:center;gap:8px;min-width:220px;animation:slideIn .25s ease;box-shadow:0 8px 32px rgba(0,0,0,.4)}.toast-item.success{border-left:3px solid var(--brand)}.toast-item.error{border-left:3px solid var(--red)}.toast-item.info{border-left:3px solid var(--blue)}@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}.divider{height:1px;background:var(--border);margin:1.25rem 0}.hiw-hero{text-align:center;padding:4.5rem 1.5rem 3rem;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(10,255,153,.06) 0%,transparent 70%)}.hiw-flow{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;max-width:900px;margin:0 auto 4rem;padding:0 1.5rem}.hiw-flow-step{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:140px;max-width:180px;padding:1rem .5rem;position:relative}.hiw-flow-icon{width:72px;height:72px;border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:1px solid;position:relative}.hiw-flow-icon svg{z-index:1}.hiw-flow-icon.c1{background:rgba(10,255,153,.08);border-color:rgba(10,255,153,.25);box-shadow:0 0 24px rgba(10,255,153,.1)}.hiw-flow-icon.c2{background:rgba(79,195,247,.08);border-color:rgba(79,195,247,.25);box-shadow:0 0 24px rgba(79,195,247,.1)}.hiw-flow-icon.c3{background:rgba(255,184,48,.08);border-color:rgba(255,184,48,.25);box-shadow:0 0 24px rgba(255,184,48,.1)}.hiw-flow-icon.c4{background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.25);box-shadow:0 0 24px rgba(167,139,250,.1)}.hiw-flow-arrow{font-size:18px;color:var(--border2);margin:0 .25rem;padding-bottom:2.5rem;flex-shrink:0}.hiw-flow-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:.3rem}.hiw-flow-sub{font-size:12px;color:var(--muted2);line-height:1.5}.hiw-flow-badge{position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:var(--brand);color:#000;font-size:9px;font-weight:700;padding:2px 8px;border-radius:999px;letter-spacing:.5px;white-space:nowrap}.hiw-detail{max-width:780px;margin:0 auto;padding:0 1.5rem 3rem}.hiw-detail-step{display:flex;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border);align-items:flex-start}.hiw-detail-step:last-child{border-bottom:none}.hiw-detail-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid}.hiw-detail-icon.c1{background:rgba(10,255,153,.08);border-color:rgba(10,255,153,.2)}.hiw-detail-icon.c2{background:rgba(79,195,247,.08);border-color:rgba(79,195,247,.2)}.hiw-detail-icon.c3{background:rgba(255,184,48,.08);border-color:rgba(255,184,48,.2)}.hiw-detail-icon.c4{background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.2)}.hiw-detail-body{flex:1}.hiw-detail-num{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.25rem}.hiw-detail-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:.5rem}.hiw-detail-desc{font-size:14px;color:var(--muted2);line-height:1.75;max-width:480px}.hiw-detail-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:.85rem}.hiw-chip{background:var(--s3);border:1px solid var(--border2);border-radius:999px;font-size:11px;color:var(--muted2);padding:3px 10px}.hiw-compare{max-width:780px;margin:0 auto;padding:0 1.5rem 4rem}.hiw-compare-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;text-align:center;margin-bottom:1.5rem}.compare-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;border:1px solid var(--border)}.compare-table th{padding:.85rem 1.1rem;font-size:13px;font-weight:600;text-align:left;background:var(--s2);border-bottom:1px solid var(--border)}.compare-table th.good{color:var(--brand)}.compare-table td{padding:.85rem 1.1rem;font-size:13px;color:var(--muted2);border-bottom:1px solid var(--border);vertical-align:top}.compare-table tr:last-child td{border-bottom:none}.compare-table td.good{color:var(--text);font-weight:500}.compare-table td .tag-good{display:inline-flex;align-items:center;gap:5px;color:var(--brand);font-weight:600}.compare-table td .tag-bad{color:var(--red)}.hiw-bottom-cta{text-align:center;padding:3rem 1.5rem 4rem;border-top:1px solid var(--border)}.plans-hero{text-align:center;padding:4rem 1.5rem 2.5rem;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(10,255,153,.06) 0%,transparent 70%)}.plans-main-title{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-1.5px;margin-bottom:1rem;color:var(--text)}.plans-main-title span{color:var(--brand)}.plans-main-sub{font-size:15px;color:var(--muted2);max-width:580px;margin:0 auto;line-height:1.7}.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1020px;margin:3rem auto;padding:0 1.5rem 3rem;align-items:start}@media(max-width:780px){.plans-grid{grid-template-columns:1fr}}.plan-card{background:var(--s1);border:1px solid var(--border);border-radius:16px;padding:1.75rem;position:relative;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}.plan-card:hover{transform:translateY(-4px);border-color:var(--border2)}.plan-card-mid{border-color:var(--brand-border);background:linear-gradient(160deg,var(--s1) 0%,rgba(10,255,153,.04) 100%)}.plan-card-mid .plan-name{color:var(--brand)}.plan-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:.5rem;text-align:center;color:var(--text)}.plan-tagline{font-size:13px;color:var(--muted2);margin-bottom:1.5rem;line-height:1.6;text-align:center}.plan-price-wrap{text-align:center;margin-bottom:1.75rem}.plan-price-main{line-height:1;display:flex;align-items:baseline;justify-content:center;gap:2px;flex-wrap:nowrap}.price-symbol{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--brand)}.price-amount{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;letter-spacing:-2px;color:var(--brand);white-space:nowrap}.price-mo{font-size:14px;font-weight:400;color:var(--muted2);white-space:nowrap}.plan-price-orig{font-size:13px;color:var(--muted);margin-top:.4rem;text-decoration:line-through}.plan-features{list-style:none;display:flex;flex-direction:column;gap:.85rem;margin-bottom:2rem;padding:0;flex:1}.plan-feature{display:flex;align-items:flex-start;gap:.75rem;font-size:13px;line-height:1.5;color:var(--text)}.plan-feature .check{color:var(--brand);font-size:14px;flex-shrink:0;margin-top:1px;font-weight:700}.plan-cta-gradient{width:100%;padding:.85rem;border-radius:10px;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .15s;border:none;letter-spacing:.3px;display:block;margin-top:auto}.plan-card:not(.plan-card-mid) .plan-cta-gradient{background:transparent;color:var(--text);border:1px solid var(--border2)}.plan-card:not(.plan-card-mid) .plan-cta-gradient:hover{background:var(--s3)}.plan-card-mid .plan-cta-gradient{background:var(--brand);color:#000}.plan-card-mid .plan-cta-gradient:hover{background:#00e888;transform:translateY(-1px)}.guarantee{text-align:center;padding:2.5rem 1.5rem 4rem;border-top:1px solid var(--border)}.video-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:600;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;padding:1rem}.video-modal-overlay.open{opacity:1;pointer-events:all}.video-modal-box{background:var(--s1);border:1px solid var(--border2);border-radius:16px;width:100%;max-width:860px;overflow:hidden;position:relative;transform:scale(.95);transition:transform .25s}.video-modal-overlay.open .video-modal-box{transform:scale(1)}.video-modal-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid var(--border)}.video-modal-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:80%}.video-modal-close{background:none;border:none;color:var(--muted2);cursor:pointer;font-size:22px;line-height:1;padding:.25rem .5rem;border-radius:6px;transition:all .15s}.video-modal-close:hover{background:var(--s3);color:var(--text)}.video-modal-player{position:relative;padding-bottom:56.25%;height:0;background:#000}.video-modal-player iframe{position:absolute;inset:0;width:100%;height:100%;border:none}.video-modal-footer{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.25rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:.5rem}.video-modal-meta{display:flex;align-items:center;gap:10px}.video-modal-score{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--brand);font-weight:500}.video-modal-dur{font-size:12px;color:var(--muted2)}.video-modal-actions{display:flex;gap:8px}@media(max-width:768px){nav{padding:.75rem 1rem}.nav-links a:not(.show){display:none}.nav-auth .btn-ghost{display:none}.btn-primary.btn-sm{font-size:12px;padding:.45rem .9rem}.hero{padding:3rem 1rem 2rem}h1{letter-spacing:-1px}.hero-sub{font-size:15px;padding:0 .5rem}.hero-ctas{flex-direction:column;align-items:center;gap:8px}.btn-xl{width:100%;max-width:320px;text-align:center}.stats{flex-wrap:wrap}.stat{min-width:50%;border-right:none;border-bottom:1px solid var(--border)}.stat:nth-child(odd){border-right:1px solid var(--border)}.stat:last-child,.stat:nth-last-child(2):nth-child(odd){border-bottom:none}.container{padding:1.5rem 1rem}.section-title{font-size:18px}.clips-grid{grid-template-columns:repeat(2,1fr);gap:.65rem}.input-row{flex-direction:column}.input-row input,.input-row button{width:100%}.channel-item{flex-wrap:wrap;gap:8px}.metric-grid{grid-template-columns:repeat(2,1fr)}.plans-grid{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto}.plan-card-mid::before{font-size:9px}.hiw-flow{flex-direction:column;align-items:center;gap:.5rem}.hiw-flow-arrow{transform:rotate(90deg);padding:0;margin:.25rem 0}.hiw-flow-step{max-width:280px;width:100%}.hiw-detail-step{flex-direction:column;gap:1rem}.hiw-detail-icon{width:44px;height:44px}.compare-table{font-size:11px}.compare-table th,.compare-table td{padding:.6rem .65rem}.compare-table th:last-child,.compare-table td:last-child{display:none}.modal{margin:.75rem;padding:1.5rem}.video-modal-box{margin:.5rem}.video-modal-footer{flex-direction:column;gap:.5rem;align-items:flex-start}.conn-item{flex-wrap:wrap;gap:.5rem}.plans-faq{padding:0 1rem 3rem}}@media(max-width:480px){nav{padding:.65rem .85rem}.nav-links{gap:.85rem}.nav-links a.show{font-size:12px}.logo{font-size:16px}.hero{padding:2.5rem .85rem 1.75rem}.hero-badge{font-size:10px;padding:3px 10px}h1{font-size:clamp(26px,8vw,38px);letter-spacing:-.5px}.hero-sub{font-size:14px}.stat-num{font-size:22px}.stat-label{font-size:11px}.clips-grid{grid-template-columns:repeat(2,1fr);gap:.5rem}.clip-thumb{height:90px}.clip-title{font-size:11px}.clip-dur,.score-num{font-size:10px}.plans-grid{padding:0 .85rem 2rem}.plan-price-main{flex-wrap:wrap;justify-content:center}.price-amount{font-size:36px}.hiw-flow-step{padding:.75rem .25rem}.hiw-flow-icon{width:56px;height:56px;border-radius:14px}.hiw-detail{padding:0 .85rem 2rem}.hiw-compare{padding:0 .85rem 3rem}.hiw-compare-title{font-size:18px}.tag-row{gap:6px}.tag{font-size:11px;padding:3px 9px}.metric-grid{grid-template-columns:repeat(2,1fr);gap:.65rem}.metric-val{font-size:20px}.toggle-label{font-size:12px}.toggle-sub{font-size:10px}.card{padding:1.1rem}.section-title{font-size:17px}.video-modal-box{border-radius:10px}.video-modal-header{padding:.75rem 1rem}.video-modal-title{font-size:13px}.video-modal-footer{padding:.65rem 1rem}.modal{padding:1.25rem}.modal-logo{font-size:17px}}@media(max-width:360px){h1{font-size:clamp(22px,7vw,30px)}.hero{padding:2rem .75rem 1.5rem}.clips-grid{grid-template-columns:1fr}.clip-thumb{height:110px}.plans-main-title{font-size:24px}.price-amount{font-size:30px}.metric-grid{grid-template-columns:1fr}.hiw-flow-step{max-width:100%}.stat{min-width:100%;border-right:none}nav .nav-links a.show{display:none}.logo{font-size:15px}}@media(min-width:481px) and (max-width:600px){.clips-grid{grid-template-columns:repeat(2,1fr)}.plans-grid{grid-template-columns:1fr;max-width:380px}.metric-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.mobile-menu-btn{display:flex!important}.nav-auth{gap:6px}.nav-auth .btn-ghost{display:none}}.mobile-nav-drawer{display:none;position:fixed;top:60px;left:0;right:0;background:var(--s1);border-bottom:1px solid var(--border);padding:1rem;z-index:199;flex-direction:column;gap:.25rem}.mobile-nav-drawer.open{display:flex}.mobile-nav-drawer a{padding:.75rem 1rem;border-radius:8px;font-size:15px;color:var(--text);text-decoration:none;cursor:pointer;border:none;background:none;font-family:"DM Sans",sans-serif;text-align:left;width:100%;display:block}.mobile-nav-drawer a:hover{background:var(--s3)}@media(hover:none){.btn,.btn-primary,.btn-ghost,.plan-cta-gradient{min-height:44px}.clip-card{cursor:pointer}.faq-item{padding:1.25rem 0}.platform-pill{padding:.6rem 1.1rem}.toggle-slider{cursor:pointer}.nav-links a{padding:.35rem 0}}@media(max-width:768px) and (orientation:landscape){.hero{padding:1.5rem 1.5rem 1rem}h1{font-size:clamp(24px,4vw,36px)}.hero-sub{display:none}.plans-grid{grid-template-columns:repeat(3,1fr);max-width:100%}.clips-grid{grid-template-columns:repeat(3,1fr)}}</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#" onclick="nav('dashboard');return false;"><span>Clip</span>Auto.ai</a>
+  <div class="nav-links">
+    <a href="#" onclick="nav('dashboard');return false;" class="active show" id="nav-dashboard">Dashboard</a>
+    <a href="#" onclick="nav('channels');return false;" id="nav-channels">Channels</a>
+    <a href="#" onclick="nav('clips');return false;" id="nav-clips">Clips</a>
+    <a href="#" onclick="nav('analytics');return false;" id="nav-analytics">Analytics</a>
+    <a href="#" onclick="nav('how');return false;" id="nav-how">How it Works</a>
+    <a href="#" onclick="nav('plans');return false;" id="nav-plans">Plans</a>
+    <a href="#" onclick="nav('settings');return false;" id="nav-settings">Settings</a>
+  </div>
+  <div class="nav-auth" id="nav-auth">
+    <button class="btn btn-ghost btn-sm" onclick="openModal('signin')">Sign in</button>
+    <button class="btn btn-primary btn-sm" onclick="openModal('signup')">Get started</button>
+  </div>
+  <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu" style="display:none;background:none;border:1px solid var(--border2);color:var(--text);border-radius:7px;padding:.4rem .6rem;cursor:pointer;font-size:16px">☰</button>
+  <div class="nav-user" id="nav-user" style="display:none;position:relative">
+    <div class="user-avatar" onclick="toggleUserMenu()" title="Account">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </div>
+    <div class="user-menu" id="user-menu">
+      <div class="user-menu-header">
+        <div class="user-menu-name" id="user-display-name">User</div>
+        <div class="user-menu-email" id="user-display-email"></div>
+      </div>
+      <button class="user-menu-item" onclick="nav('settings');closeUserMenu()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        Settings
+      </button>
+      <button class="user-menu-item" onclick="nav('analytics');closeUserMenu()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Analytics
+      </button>
+      <button class="user-menu-item danger" onclick="signOut()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Sign out
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── AUTH MODAL ── -->
+<div class="modal-overlay" id="auth-modal" onclick="handleModalOverlayClick(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-logo"><span>Clip</span>Auto.ai</div>
+    <p class="modal-sub" id="modal-sub">Welcome back — sign in to continue</p>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tab-signin" onclick="switchTab('signin')">Sign in</button>
+      <button class="modal-tab" id="tab-signup" onclick="switchTab('signup')">Create account</button>
+    </div>
+    <div class="modal-error" id="modal-error"></div>
+    <div id="modal-signin-form">
+      <div class="modal-field">
+        <label>Email address</label>
+        <input type="email" id="signin-email" placeholder="you@example.com" onkeydown="if(event.key==='Enter')doSignIn()">
+      </div>
+      <div class="modal-field">
+        <label>Password <a class="forgot-link" onclick="forgotPassword()">Forgot password?</a></label>
+        <input type="password" id="signin-password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doSignIn()">
+      </div>
+      <button class="btn btn-primary" style="width:100%;padding:.75rem;font-size:14px;border-radius:8px" onclick="doSignIn()">Sign in</button>
+    </div>
+    <div id="modal-signup-form" style="display:none">
+      <div class="modal-field">
+        <label>Full name</label>
+        <input type="text" id="signup-name" placeholder="Your name" onkeydown="if(event.key==='Enter')doSignUp()">
+      </div>
+      <div class="modal-field">
+        <label>Email address</label>
+        <input type="email" id="signup-email" placeholder="you@example.com" onkeydown="if(event.key==='Enter')doSignUp()">
+      </div>
+      <div class="modal-field">
+        <label>Password</label>
+        <input type="password" id="signup-password" placeholder="Min. 8 characters" onkeydown="if(event.key==='Enter')doSignUp()">
+      </div>
+      <button class="btn btn-primary" style="width:100%;padding:.75rem;font-size:14px;border-radius:8px" onclick="doSignUp()">Create account — it's free</button>
+    </div>
+    <div class="modal-divider">or</div>
+    <button class="btn-google" onclick="signInWithGoogle()">
+      <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      Continue with Google
+    </button>
+    <div class="modal-footer" id="modal-footer-switch">
+      Don't have an account? <a onclick="switchTab('signup')">Sign up free</a>
+    </div>
+    <div class="modal-footer" style="margin-top:.5rem;font-size:11px;color:var(--muted)">
+      By continuing you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── DASHBOARD ── -->
+<div class="page active" id="page-dashboard">
+  <div class="hero">
+    <div class="hero-badge"><div class="pulse"></div>AUTOPILOT ACTIVE</div>
+    <h1>Your content,<br><em>on autopilot</em></h1>
+    <p class="hero-sub">ClipAuto monitors your YouTube channels, AI-clips highlights, and publishes to TikTok, Reels & Shorts — while you sleep.</p>
+    <div class="hero-ctas">
+      <button class="btn btn-primary btn-xl" onclick="nav('channels')">Connect a Channel →</button>
+      <button class="btn btn-ghost btn-xl" onclick="nav('clips')">View Clips</button>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num" id="dash-channels">0</div><div class="stat-label">Channels monitored</div></div>
+    <div class="stat"><div class="stat-num" id="dash-clips">0</div><div class="stat-label">Clips generated</div></div>
+    <div class="stat"><div class="stat-num" id="dash-views">—</div><div class="stat-label">Est. total views</div></div>
+    <div class="stat"><div class="stat-num" id="dash-score">—</div><div class="stat-label">Avg viral score</div></div>
+  </div>
+  <div class="container">
+    <div class="eyebrow">Recent activity</div>
+    <div class="section-title">Latest clips</div>
+    <div class="section-sub">Most recently generated clips across all channels</div>
+    <div id="dash-clips-grid" class="clips-grid">
+      <div class="empty" style="grid-column:1/-1">
+        <div class="empty-icon">✂️</div>
+        <div class="empty-title">No clips yet</div>
+        <div class="empty-sub">Connect a channel to start generating clips automatically</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── HOW IT WORKS ── -->
+<div class="page" id="page-how" data-lazy="true">
+
+  <!-- Hero -->
+  <div class="hiw-hero">
+    <div class="hero-badge" style="margin-bottom:1rem"><div class="pulse"></div>ZERO EFFORT REQUIRED</div>
+    <h1 style="font-size:clamp(28px,4vw,54px);letter-spacing:-1.5px;margin-bottom:.75rem">Set once.<br><em>Clips forever.</em></h1>
+    <p style="font-size:16px;color:var(--muted2);max-width:460px;margin:0 auto 2.5rem;line-height:1.65">ClipAuto.ai watches your YouTube channel, detects uploads, clips the viral moments, and posts to every platform — automatically.</p>
+    <button class="btn btn-primary btn-xl" onclick="openModal('signup')">Start free today →</button>
+  </div>
+
+  <!-- Flow diagram -->
+  <div class="hiw-flow">
+
+    <div class="hiw-flow-step">
+      <div class="hiw-flow-icon c1">
+        <div class="hiw-flow-badge">NEW</div>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(10,255,153,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+          <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="rgba(10,255,153,0.9)" stroke="none"/>
+        </svg>
+      </div>
+      <div class="hiw-flow-title">New Video Posted</div>
+      <div class="hiw-flow-sub">You upload to YouTube like normal</div>
+    </div>
+
+    <div class="hiw-flow-arrow">→</div>
+
+    <div class="hiw-flow-step">
+      <div class="hiw-flow-icon c2">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(79,195,247,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+        </svg>
+      </div>
+      <div class="hiw-flow-title">AI Detects Upload</div>
+      <div class="hiw-flow-sub">Instant detection — no refresh needed</div>
+    </div>
+
+    <div class="hiw-flow-arrow">→</div>
+
+    <div class="hiw-flow-step">
+      <div class="hiw-flow-icon c3">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,184,48,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 8v4l3 3"/>
+          <path d="M5 3l1.5 1.5M19 3l-1.5 1.5M5 21l1.5-1.5M19 21l-1.5-1.5"/>
+        </svg>
+      </div>
+      <div class="hiw-flow-title">AI Clips It</div>
+      <div class="hiw-flow-sub">Viral moments extracted automatically</div>
+    </div>
+
+    <div class="hiw-flow-arrow">→</div>
+
+    <div class="hiw-flow-step">
+      <div class="hiw-flow-icon c4">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(167,139,250,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+          <polyline points="16 6 12 2 8 6"/>
+          <line x1="12" y1="2" x2="12" y2="15"/>
+        </svg>
+      </div>
+      <div class="hiw-flow-title">Auto-Posted</div>
+      <div class="hiw-flow-sub">TikTok, Reels & Shorts — all at once</div>
+    </div>
+
+  </div>
+
+  <!-- Detailed steps -->
+  <div class="hiw-detail">
+
+    <div class="hiw-detail-step">
+      <div class="hiw-detail-icon c1">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(10,255,153,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+      </div>
+      <div class="hiw-detail-body">
+        <div class="hiw-detail-num">Step 01</div>
+        <div class="hiw-detail-title">Connect Your Channel</div>
+        <div class="hiw-detail-desc">Paste your YouTube channel URL or sign in with Google. ClipAuto.ai instantly links to your channel and begins monitoring — no downloading, no setup beyond one URL.</div>
+        <div class="hiw-detail-chips">
+          <span class="hiw-chip">🔗 Paste any channel URL</span>
+          <span class="hiw-chip">🔑 Google OAuth supported</span>
+          <span class="hiw-chip">⚡ Live in 30 seconds</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hiw-detail-step">
+      <div class="hiw-detail-icon c2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(79,195,247,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </div>
+      <div class="hiw-detail-body">
+        <div class="hiw-detail-num">Step 02</div>
+        <div class="hiw-detail-title">Detect New Uploads Instantly</div>
+        <div class="hiw-detail-desc">Every time you post a new YouTube video, ClipAuto.ai detects it automatically within minutes. No manual triggering, no checking — it just works in the background 24/7.</div>
+        <div class="hiw-detail-chips">
+          <span class="hiw-chip">📡 Polls every 15 minutes</span>
+          <span class="hiw-chip">🔔 Zero manual input</span>
+          <span class="hiw-chip">🕐 Works while you sleep</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hiw-detail-step">
+      <div class="hiw-detail-icon c3">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,184,48,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+      <div class="hiw-detail-body">
+        <div class="hiw-detail-num">Step 03</div>
+        <div class="hiw-detail-title">AI Finds & Clips Viral Moments</div>
+        <div class="hiw-detail-desc">Our AI analyses the full transcript, scores every moment for viral potential, and extracts the top clips — auto-cropped to 9:16, captioned, and formatted for short-form. No editor needed.</div>
+        <div class="hiw-detail-chips">
+          <span class="hiw-chip">🤖 GPT-4 viral scoring</span>
+          <span class="hiw-chip">✂️ Auto 9:16 crop</span>
+          <span class="hiw-chip">💬 Burned-in captions</span>
+          <span class="hiw-chip">🎯 Up to 5 clips/video</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hiw-detail-step">
+      <div class="hiw-detail-icon c4">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(167,139,250,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </div>
+      <div class="hiw-detail-body">
+        <div class="hiw-detail-num">Step 04</div>
+        <div class="hiw-detail-title">Auto-Post to Every Platform</div>
+        <div class="hiw-detail-desc">Clips are published directly to TikTok, Instagram Reels, and YouTube Shorts — simultaneously, with optimised captions and hashtags for each platform. You never touch an upload button.</div>
+        <div class="hiw-detail-chips">
+          <span class="hiw-chip">📱 TikTok</span>
+          <span class="hiw-chip">📸 Instagram Reels</span>
+          <span class="hiw-chip">▶️ YouTube Shorts</span>
+          <span class="hiw-chip">🔄 All at once</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Comparison table -->
+  <div class="hiw-compare">
+    <div class="hiw-compare-title">ClipAuto.ai vs Manual Editing</div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>What matters</th>
+          <th class="good">✦ ClipAuto.ai</th>
+          <th>Manual editing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="good">Time per video</td>
+          <td><span class="tag-good">⚡ 2 minutes</span><br><span style="font-size:11px;color:var(--muted)">Just connect and forget</span></td>
+          <td><span class="tag-bad">⏰ 2+ hours</span><br><span style="font-size:11px;color:var(--muted)">Watch, cut, export, upload</span></td>
+        </tr>
+        <tr>
+          <td class="good">Consistency</td>
+          <td><span class="tag-good">🎯 100% every video</span><br><span style="font-size:11px;color:var(--muted)">Never misses an upload</span></td>
+          <td><span class="tag-bad">❓ Depends on your mood</span><br><span style="font-size:11px;color:var(--muted)">Skipped videos = missed reach</span></td>
+        </tr>
+        <tr>
+          <td class="good">AI analysis</td>
+          <td><span class="tag-good">🤖 Included</span><br><span style="font-size:11px;color:var(--muted)">Identifies viral moments</span></td>
+          <td><span class="tag-bad">👤 Manual guesswork</span><br><span style="font-size:11px;color:var(--muted)">Based on gut feeling</span></td>
+        </tr>
+        <tr>
+          <td class="good">Multi-platform</td>
+          <td><span class="tag-good">🔄 Automatic</span><br><span style="font-size:11px;color:var(--muted)">Posts to all platforms at once</span></td>
+          <td><span class="tag-bad">📝 Upload each manually</span><br><span style="font-size:11px;color:var(--muted)">Different formats per platform</span></td>
+        </tr>
+        <tr>
+          <td class="good">Cost</td>
+          <td><span class="tag-good">💚 Free to start</span><br><span style="font-size:11px;color:var(--muted)">No card required</span></td>
+          <td><span class="tag-bad">💸 Editor fees or your time</span><br><span style="font-size:11px;color:var(--muted)">$50–$500/month for editors</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="hiw-bottom-cta">
+    <div class="hero-badge" style="margin-bottom:1rem;display:inline-flex"><div class="pulse"></div>START FOR FREE</div>
+    <h2 style="font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:800;letter-spacing:-1px;margin-bottom:.75rem">Ready to go on autopilot?</h2>
+    <p style="font-size:14px;color:var(--muted2);margin-bottom:1.75rem">Connect your first channel in 30 seconds. No credit card required.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <button class="btn btn-primary btn-xl" onclick="openModal('signup')">Get started free →</button>
+      <button class="btn btn-ghost btn-xl" onclick="nav('channels')">Connect a channel</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- ── PLANS ── -->
+<div class="page" id="page-plans" data-lazy="true">
+
+  <!-- Hero -->
+  <div class="plans-hero">
+    <h1 class="plans-main-title"><span>Clip</span>Auto.AI Pricing Plans</h1>
+    <p class="plans-main-sub">Getting a subscription will reset your clips and start your new billing cycle today. Your existing channels and platforms stay connected within your new plan's allowance.</p>
+  </div>
+
+  <!-- Cards -->
+  <div class="plans-grid">
+
+    <!-- Premium (Single Slice equivalent) -->
+    <div class="plan-card">
+      <div class="plan-name">Premium</div>
+      <div class="plan-tagline">Perfect for individual creators who want to start automating their short-form workflow.</div>
+      <div class="plan-price-wrap">
+        <div class="plan-price-main"><span class="price-symbol">$</span><span class="price-amount">24.99</span><span class="price-mo">/mo</span></div>
+        <div class="plan-price-orig"><s>$35/mo</s></div>
+      </div>
+      <ul class="plan-features">
+        <li class="plan-feature"><span class="check">✓</span><span>1 YouTube channel connection of your choice</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>10 AI-generated clips/month</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>Auto-posting to 4 platforms: Facebook, Instagram, TikTok, YouTube</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>AI captions + vertical formatting</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>Basic analytics dashboard</span></li>
+      </ul>
+      <button class="plan-cta-gradient" onclick="openModal('signup')">Get Premium</button>
+    </div>
+
+    <!-- Deluxe (Half Pie equivalent) -->
+    <div class="plan-card plan-card-mid">
+      <div class="plan-name">Deluxe</div>
+      <div class="plan-tagline">For growing creators managing multiple channels and posting more frequently.</div>
+      <div class="plan-price-wrap">
+        <div class="plan-price-main"><span class="price-symbol">$</span><span class="price-amount">49.99</span><span class="price-mo">/mo</span></div>
+        <div class="plan-price-orig"><s>$100/mo</s></div>
+      </div>
+      <ul class="plan-features">
+        <li class="plan-feature"><span class="check">✓</span><span>Up to 3 YouTube channel connections of your choice</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>30 AI-generated clips/month</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>Auto-posting to 4 platforms: Facebook, Instagram, TikTok, YouTube</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>AI captions + vertical formatting</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>AI B-Roll integration for more engaging edits</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>Advanced analytics + performance insights</span></li>
+      </ul>
+      <button class="plan-cta-gradient" onclick="openModal('signup')">Get Deluxe</button>
+    </div>
+
+    <!-- Ultimate (Full Pie equivalent) -->
+    <div class="plan-card">
+      <div class="plan-name">Ultimate</div>
+      <div class="plan-tagline">Built for serious content creators and small teams who post daily.</div>
+      <div class="plan-price-wrap">
+        <div class="plan-price-main"><span class="price-symbol">$</span><span class="price-amount">99.99</span><span class="price-mo">/mo</span></div>
+        <div class="plan-price-orig"><s>$300/mo</s></div>
+      </div>
+      <ul class="plan-features">
+        <li class="plan-feature"><span class="check">✓</span><span>Up to 5 YouTube channel connections of your choice</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>100 AI-generated clips/month</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>Auto-posting to 4 platforms: Facebook, Instagram, TikTok, YouTube</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>AI captions + vertical formatting</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>AI B-Roll integration for cinematic edits</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>Advanced analytics + performance insights</span></li>
+        <li class="plan-feature"><span class="check">✓</span><span>Priority customer support</span></li>
+      </ul>
+      <button class="plan-cta-gradient" onclick="openModal('signup')">Get Ultimate</button>
+    </div>
+
+  </div>
+
+  <!-- Guarantee -->
+  <div class="guarantee">
+    <div style="font-size:2rem;margin-bottom:.75rem">🛡️</div>
+    <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:.5rem">30-Day Money-Back Guarantee</div>
+    <div style="font-size:14px;color:var(--muted2);max-width:420px;margin:0 auto 2rem;line-height:1.65">Not happy? Email us within 30 days of your first payment and we will refund you — no questions asked.</div>
+    <button class="btn btn-primary btn-xl" onclick="openModal('signup')">Start free today →</button>
+  </div>
+
+</div>
+
+<!-- ── CHANNELS ── -->
+<div class="page" id="page-channels" data-lazy="true">
+  <div class="container">
+    <div class="eyebrow">Monitoring</div>
+    <div class="section-title">YouTube Channels</div>
+    <div class="section-sub">Add channels to monitor — new uploads are clipped automatically</div>
+
+    <div class="card" style="margin-bottom:1.5rem">
+      <div class="card-title" style="margin-bottom:1rem">Connect a channel</div>
+      <div class="field">
+        <label>YouTube Channel URL or Handle</label>
+        <div class="input-row">
+          <input type="url" id="ch-url" placeholder="https://youtube.com/@channelname  or  @handle">
+          <button class="btn btn-primary" onclick="connectChannel()">Connect</button>
+        </div>
+        <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
+          <span style="font-size:11px;color:var(--muted);align-self:center">Try:</span>
+          <span class="badge badge-muted" style="cursor:pointer" onclick="document.getElementById('ch-url').value='https://youtube.com/@mkbhd'">@MKBHD</span>
+          <span class="badge badge-muted" style="cursor:pointer" onclick="document.getElementById('ch-url').value='https://youtube.com/@LexFridman'">@LexFridman</span>
+          <span class="badge badge-muted" style="cursor:pointer" onclick="document.getElementById('ch-url').value='https://youtube.com/@veritasium'">@Veritasium</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="field" style="margin:0">
+          <label>Clip length</label>
+          <select id="ch-len"><option value="15">15 seconds</option><option value="40" selected>30–45 seconds</option><option value="60">60 seconds</option><option value="90">90 seconds</option></select>
+        </div>
+        <div class="field" style="margin:0">
+          <label>Clips per video</label>
+          <select id="ch-count"><option value="1">1 clip</option><option value="3" selected>3 clips</option><option value="5">5 clips</option></select>
+        </div>
+        <div class="field" style="margin:0">
+          <label>Caption style</label>
+          <select id="ch-caps"><option value="none">No captions</option><option value="auto" selected>Auto captions</option><option value="viral">Viral word-by-word</option></select>
+        </div>
+        <div class="field" style="margin:0">
+          <label>Publish to</label>
+          <div class="platform-grid" id="ch-platforms">
+            <div class="platform-pill on" data-p="tiktok" onclick="togglePill(this)">
+              <div class="picon" style="background:#010101;color:#fff">T</div>TikTok<span class="pcheck">✓</span>
+            </div>
+            <div class="platform-pill on" data-p="youtube_shorts" onclick="togglePill(this)">
+              <div class="picon" style="background:#ff0000;color:#fff">▶</div>Shorts<span class="pcheck">✓</span>
+            </div>
+            <div class="platform-pill" data-p="instagram" onclick="togglePill(this)">
+              <div class="picon" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;border-radius:5px">IG</div>Reels<span class="pcheck">✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="prog-wrap" id="ch-prog">
+        <div class="prog-header">
+          <div class="prog-label"><div class="pulse"></div><span id="ch-prog-label">Connecting…</span></div>
+          <div class="prog-pct" id="ch-prog-pct">0%</div>
+        </div>
+        <div class="prog-track"><div class="prog-fill" id="ch-prog-fill"></div></div>
+        <div class="log" id="ch-log" style="margin-top:.75rem"></div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-bottom:.75rem">Active channels</div>
+    <div id="channel-list">
+      <div class="empty"><div class="empty-icon">📡</div><div class="empty-title">No channels yet</div><div class="empty-sub">Add your first YouTube channel above</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CLIPS ── -->
+<div class="page" id="page-clips" data-lazy="true">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:2rem">
+      <div>
+        <div class="eyebrow">Generated content</div>
+        <div class="section-title" id="clips-page-title">Top 40 Most Viral Videos Worldwide</div>
+        <div class="section-sub" id="clips-page-sub">Loading today's trending videos from YouTube...</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <select id="clips-filter" onchange="filterClips()" style="width:130px;font-size:12px;padding:.4rem .7rem">
+          <option value="">All status</option>
+          <option value="ready">Ready</option>
+          <option value="published">Published</option>
+          <option value="processing">Processing</option>
+        </select>
+        <button class="btn btn-primary btn-sm" onclick="publishAll()">Publish All</button>
+      </div>
+    </div>
+    <div id="clips-grid" class="clips-grid">
+      <div class="empty" style="grid-column:1/-1">
+        <div class="empty-icon">✂️</div>
+        <div class="empty-title">No clips yet</div>
+        <div class="empty-sub">Connect a channel and new clips will appear here automatically</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ANALYTICS ── -->
+<div class="page" id="page-analytics" data-lazy="true">
+  <div class="container">
+    <div class="eyebrow">Performance</div>
+    <div class="section-title">Analytics</div>
+    <div class="section-sub">Views, reach, and growth across all platforms</div>
+    <div class="metric-grid">
+      <div class="metric-card"><div class="metric-label">TOTAL VIEWS</div><div class="metric-val green">1.2M</div><div class="metric-delta">↑ +34% this week</div></div>
+      <div class="metric-card"><div class="metric-label">CLIPS PUBLISHED</div><div class="metric-val">47</div><div class="metric-delta muted">Last 30 days</div></div>
+      <div class="metric-card"><div class="metric-label">AVG VIRAL SCORE</div><div class="metric-val green">84</div><div class="metric-delta">↑ +12 pts</div></div>
+      <div class="metric-card"><div class="metric-label">NEW FOLLOWERS</div><div class="metric-val">+3,841</div><div class="metric-delta">↑ All platforms</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="margin-bottom:1.25rem">Views by platform</div>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <div class="bar-label-row"><span>TikTok</span><span style="color:var(--brand);font-weight:500">640K</span></div>
+          <div class="bar-track"><div class="bar-fill" style="background:var(--brand);width:0%" data-w="52%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label-row"><span>YouTube Shorts</span><span style="color:#ff4545;font-weight:500">380K</span></div>
+          <div class="bar-track"><div class="bar-fill" style="background:#ff4545;width:0%" data-w="31%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label-row"><span>Instagram Reels</span><span style="color:#e1306c;font-weight:500">180K</span></div>
+          <div class="bar-track"><div class="bar-fill" style="background:#e1306c;width:0%" data-w="17%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SETTINGS ── -->
+<div class="page" id="page-settings" data-lazy="true">
+  <div class="container">
+    <div class="eyebrow">Configuration</div>
+    <div class="section-title">Settings</div>
+    <div class="section-sub">Manage connections, preferences, and account</div>
+
+    <div class="card" style="margin-bottom:1rem">
+      <div class="card-header"><div class="card-title">Platform connections</div></div>
+      <div class="conn-grid">
+        <div class="conn-item">
+          <div class="conn-left">
+            <div class="conn-icon" style="background:#010101;color:#fff">T</div>
+            <div><div class="conn-name">TikTok</div><div class="conn-status disconnected" id="tiktok-status">Not connected</div></div>
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="connectPlatform('tiktok')">Connect</button>
+        </div>
+        <div class="conn-item">
+          <div class="conn-left">
+            <div class="conn-icon" style="background:#ff0000;color:#fff">▶</div>
+            <div><div class="conn-name">YouTube Shorts</div><div class="conn-status disconnected" id="youtube-status">Not connected</div></div>
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="connectPlatform('google')">Connect</button>
+        </div>
+        <div class="conn-item">
+          <div class="conn-left">
+            <div class="conn-icon" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;border-radius:8px">IG</div>
+            <div><div class="conn-name">Instagram Reels</div><div class="conn-status disconnected" id="instagram-status">Not connected</div></div>
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="connectPlatform('instagram')">Connect</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><div class="card-title">Preferences</div></div>
+      <div class="toggle-row">
+        <div><div class="toggle-label">Auto-publish clips</div><div class="toggle-sub">Publish immediately after processing</div></div>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <div><div class="toggle-label">Email notifications</div><div class="toggle-sub">Get notified when clips are ready</div></div>
+        <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <div><div class="toggle-label">Viral score filter</div><div class="toggle-sub">Only publish clips with score above 70</div></div>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── VIDEO MODAL ── -->
+<div class="video-modal-overlay" id="video-modal" onclick="handleVideoOverlayClick(event)">
+  <div class="video-modal-box">
+    <div class="video-modal-header">
+      <div class="video-modal-title" id="video-modal-title">Clip title</div>
+      <button class="video-modal-close" onclick="closeVideoModal()">✕</button>
+    </div>
+    <div class="video-modal-player">
+      <iframe id="video-modal-iframe" src="" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen allow="autoplay"></iframe>
+    </div>
+    <div class="video-modal-footer">
+      <div class="video-modal-meta">
+        <span class="video-modal-dur" id="video-modal-dur"></span>
+        <div class="video-modal-score">
+          <div class="score-bar" style="width:50px"><div class="score-fill" id="video-modal-score-fill" style="width:0%"></div></div>
+          <span id="video-modal-score-num"></span> viral score
+        </div>
+      </div>
+      <div class="video-modal-actions">
+        <a id="video-modal-yt-link" href="#" target="_blank" class="btn btn-ghost btn-sm" style="text-decoration:none">▶ YouTube</a>
+        <button class="btn btn-primary btn-sm" onclick="closeVideoModal()">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+const API = '/api';
+let channels = [];
+let clips = [];
+
+// ── Navigation ────────────────────────────────────────────────────────────
+// ── URL routing ──────────────────────────────────────────────────────────────
+const ROUTES = {
+  '':          'dashboard',
+  '/':         'dashboard',
+  '/how':      'how',
+  '/channels': 'channels',
+  '/clips':    'clips',
+  '/analytics':'analytics',
+  '/settings': 'settings',
+  '/plans':    'plans',
+};
+
+function hydrateLazyPage(pageEl) {
+  if (!pageEl || !pageEl._lazyContent) return;
+  pageEl.innerHTML = pageEl._lazyContent;
+  pageEl._lazyContent = '';
+  pageEl.removeAttribute('data-lazy');
+}
+
+function nav(page, pushState = true) {
+  try {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    // Deactivate all nav links
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    // Show target page
+    const target = document.getElementById('page-' + page);
+    if (!target) { console.error('Page not found: page-' + page); return; }
+    hydrateLazyPage(target);
+    target.classList.add('active');
+    // Activate nav link
+    const navLink = document.getElementById('nav-' + page);
+    if (navLink) navLink.classList.add('active');
+    // Update URL without reload
+    if (pushState) {
+      const path = page === 'dashboard' ? '/' : '/' + page;
+      history.pushState({ page }, '', path);
+    }
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Page-specific actions
+    if (page === 'analytics') animateBars();
+    if (page === 'channels') loadChannels();
+    if (page === 'clips') loadClips();
+    if (page === 'settings') loadAuthStatus();
+    if (page === 'dashboard') loadDashboard();
+  } catch(e) {
+    console.error('Nav error:', e);
+  }
+}
+
+// Handle browser back/forward buttons
+window.addEventListener('popstate', (e) => {
+  const page = e.state?.page || ROUTES[location.pathname] || 'dashboard';
+  nav(page, false);
+});
+
+// Load correct page on initial visit based on URL path
+function initRoute() {
+  const path = location.pathname.replace(/\/$/, '') || '/';
+  const page = ROUTES[path] || ROUTES['/' + path.split('/').pop()] || 'dashboard';
+  nav(page, false);
+}
+
+// ── Toast ─────────────────────────────────────────────────────────────────
+function toast(msg, type = 'info') {
+  const el = document.createElement('div');
+  el.className = `toast-item ${type}`;
+  const icons = {success:'✓', error:'✕', info:'ℹ'};
+  el.innerHTML = `<span>${icons[type]||'ℹ'}</span>${msg}`;
+  document.getElementById('toast').appendChild(el);
+  setTimeout(() => el.remove(), 3500);
+}
+
+// ── Platform toggle ───────────────────────────────────────────────────────
+function togglePill(el) {
+  el.classList.toggle('on');
+}
+function getSelectedPlatforms() {
+  return [...document.querySelectorAll('#ch-platforms .platform-pill.on')].map(p => p.dataset.p);
+}
+
+// ── Connect channel ───────────────────────────────────────────────────────
+async function connectChannel() {
+  const url = document.getElementById('ch-url').value.trim();
+  if (!url) { toast('Enter a YouTube channel URL or handle', 'error'); return; }
+
+  const progWrap = document.getElementById('ch-prog');
+  const progFill = document.getElementById('ch-prog-fill');
+  const progPct  = document.getElementById('ch-prog-pct');
+  const progLbl  = document.getElementById('ch-prog-label');
+  const log      = document.getElementById('ch-log');
+
+  progWrap.style.display = 'block';
+  log.innerHTML = '';
+
+  const steps = [
+    [10, 'info', 'Resolving channel handle…'],
+    [30, 'info', 'Fetching channel metadata…'],
+    [55, 'ok',   'Channel found — scanning recent videos…'],
+    [75, 'info', 'AI detecting viral moments…'],
+    [90, 'ok',   'Extracting clips…'],
+  ];
+
+  for (const [pct, cls, msg] of steps) {
+    await sleep(500);
+    progFill.style.width = pct + '%';
+    progPct.textContent  = pct + '%';
+    progLbl.textContent  = msg;
+    addLog(log, msg, cls);
+  }
+
+  try {
+    const body = {
+      url_or_handle: url,
+      clip_length_seconds: parseInt(document.getElementById('ch-len').value),
+      clips_per_video: parseInt(document.getElementById('ch-count').value),
+      caption_style: document.getElementById('ch-caps').value,
+      target_platforms: getSelectedPlatforms(),
+    };
+    const res = await fetch(`${API}/channels/connect`, {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(body)
+    });
+    if (!res.ok) throw new Error(await res.text());
+    const ch = await res.json();
+    progFill.style.width = '100%'; progPct.textContent = '100%';
+    addLog(log, `Connected: ${ch.channel_title}`, 'ok');
+    toast(`Channel "${ch.channel_title}" connected!`, 'success');
+    document.getElementById('ch-url').value = '';
+    setTimeout(() => { progWrap.style.display = 'none'; loadChannels(); }, 1500);
+  } catch (e) {
+    // Demo mode — simulate success
+    progFill.style.width = '100%'; progPct.textContent = '100%';
+    addLog(log, 'Demo: channel connected (backend not running)', 'warn');
+    toast('Demo mode — connect your backend to go live', 'info');
+    addDemoChannel(url);
+    setTimeout(() => { progWrap.style.display = 'none'; }, 1500);
+  }
+}
+
+function addDemoChannel(urlOrHandle) {
+  const handle = urlOrHandle.includes('@') ? urlOrHandle.split('@').pop().split('/')[0] : urlOrHandle;
+  channels.push({ id: Date.now(), channel_handle: '@' + handle, channel_title: handle, is_active: true, clips_per_video: 3 });
+  renderChannels();
+  updateDashStats();
+}
+
+// ── Load channels ─────────────────────────────────────────────────────────
+async function loadChannels() {
+  try {
+    const res = await fetch(`${API}/channels`);
+    if (!res.ok) throw new Error();
+    channels = await res.json();
+  } catch { /* use existing demo data */ }
+  renderChannels();
+}
+
+function renderChannels() {
+  const el = document.getElementById('channel-list');
+  if (!el) return;
+  if (!channels.length) {
+    el.innerHTML = '<div class="empty"><div class="empty-icon">📡</div><div class="empty-title">No channels yet</div><div class="empty-sub">Add your first YouTube channel above</div></div>';
+    return;
+  }
+  el.innerHTML = channels.map(ch => `
+    <div class="channel-item">
+      <div class="channel-avatar">${(ch.channel_title||'?')[0].toUpperCase()}</div>
+      <div class="channel-info">
+        <div class="channel-name">${ch.channel_title || ch.channel_handle}</div>
+        <div class="channel-handle">${ch.channel_handle}</div>
+        <div class="channel-badges">
+          <span class="badge badge-green">Active</span>
+          <span class="badge badge-muted">${ch.clips_per_video} clips/video</span>
+        </div>
+      </div>
+      <button class="btn btn-danger btn-sm" onclick="disconnectChannel(${ch.id})">Remove</button>
+    </div>
+  `).join('');
+}
+
+async function disconnectChannel(id) {
+  try {
+    await fetch(`${API}/channels/${id}`, {method:'DELETE'});
+  } catch {}
+  channels = channels.filter(c => c.id !== id);
+  renderChannels(); updateDashStats();
+  toast('Channel removed', 'info');
+}
+
+// ── Load clips ────────────────────────────────────────────────────────────
+const DEMO_CLIPS = [
+  {id:1,  title:'The Hunt Is On - Marvel Rivals Season 7',          channel:'Marvel Entertainment',   youtube_video_id:'HdG4elTlDv8', thumbnail:'https://i.ytimg.com/vi/HdG4elTlDv8/hqdefault.jpg', viral_score:99, views:9700000,  start_second:0, end_second:114, status:'published'},
+  {id:2,  title:'BTS ARIRANG Animation Trailer',                    channel:'HYBE LABELS',             youtube_video_id:'Exukk6JO9i0', thumbnail:'https://i.ytimg.com/vi/Exukk6JO9i0/hqdefault.jpg', viral_score:98, views:12000000, start_second:0, end_second:115, status:'published'},
+  {id:3,  title:'Sekiro: No Defeat - Official Trailer 2',           channel:'Crunchyroll',             youtube_video_id:'IanqpvZsp_s', thumbnail:'https://i.ytimg.com/vi/IanqpvZsp_s/hqdefault.jpg', viral_score:97, views:5800000,  start_second:0, end_second:90,  status:'published'},
+  {id:4,  title:'Romeo Santos & Drake - Odio (Letra)',              channel:'Romeo Santos',             youtube_video_id:'Wek6DztgaXo', thumbnail:'https://i.ytimg.com/vi/Wek6DztgaXo/hqdefault.jpg', viral_score:96, views:4600000,  start_second:0, end_second:207, status:'published'},
+  {id:5,  title:'NEVER FIGHT ALONE - Miks Agent Trailer VALORANT', channel:'VALORANT',                youtube_video_id:'gictwC-KlTk', thumbnail:'https://i.ytimg.com/vi/gictwC-KlTk/hqdefault.jpg', viral_score:95, views:8300000,  start_second:0, end_second:96,  status:'published'},
+  {id:6,  title:'Poppy Playtime Chapter 6 Teaser Trailer Secrets',  channel:'Jondres GC',              youtube_video_id:'09ngS5cjJ1k', thumbnail:'https://i.ytimg.com/vi/09ngS5cjJ1k/hqdefault.jpg', viral_score:94, views:6100000,  start_second:0, end_second:147, status:'published'},
+  {id:7,  title:'BTS: THE RETURN - Official Trailer Netflix',       channel:'Netflix',                 youtube_video_id:'jRig7JvOpWg', thumbnail:'https://i.ytimg.com/vi/jRig7JvOpWg/hqdefault.jpg', viral_score:93, views:23400000, start_second:0, end_second:120, status:'published'},
+  {id:8,  title:'Mi Amigo Descubrio Que Uso Hacks en Free Fire',    channel:'TheDonato',               youtube_video_id:'FdnYWFuLHtM', thumbnail:'https://i.ytimg.com/vi/FdnYWFuLHtM/hqdefault.jpg', viral_score:92, views:4200000,  start_second:0, end_second:45,  status:'published'},
+  {id:9,  title:'Poppy Playtime Ch6 - Rory Lovecape Hermano Secreto',channel:'Jondres GC',             youtube_video_id:'F0ZVvxkxpKE', thumbnail:'https://i.ytimg.com/vi/F0ZVvxkxpKE/hqdefault.jpg', viral_score:91, views:3800000,  start_second:0, end_second:45,  status:'published'},
+  {id:10, title:'Abre Puesto de Comida Nocturna 3AM en Minecraft',  channel:'Mikecrack',               youtube_video_id:'gExxFF9VQHM', thumbnail:'https://i.ytimg.com/vi/gExxFF9VQHM/hqdefault.jpg', viral_score:90, views:2900000,  start_second:0, end_second:45,  status:'published'},
+  {id:11, title:'Tomando Decisiones Imposibles en Roblox',          channel:'ElChurches',              youtube_video_id:'a1ZvZ6if9tE', thumbnail:'https://i.ytimg.com/vi/a1ZvZ6if9tE/hqdefault.jpg', viral_score:89, views:2400000,  start_second:0, end_second:45,  status:'published'},
+  {id:12, title:'Wisin - Escapate Conmigo feat Ozuna (Letra)',      channel:'Wisin',                   youtube_video_id:'RTpneeZ3Ybg', thumbnail:'https://i.ytimg.com/vi/RTpneeZ3Ybg/hqdefault.jpg', viral_score:89, views:23400000, start_second:0, end_second:210, status:'published'},
+  {id:13, title:'J Balvin, Bad Bunny - La Cancion (Letra)',         channel:'J Balvin',                youtube_video_id:'RR8NrL8K-Ns', thumbnail:'https://i.ytimg.com/vi/RR8NrL8K-Ns/hqdefault.jpg', viral_score:88, views:2400000,  start_second:0, end_second:240, status:'published'},
+  {id:14, title:'Roblox Best Gameplay',                             channel:'Gaming',                  youtube_video_id:'pOpF93Qf3Kk', thumbnail:'https://i.ytimg.com/vi/pOpF93Qf3Kk/hqdefault.jpg', viral_score:88, views:1800000,  start_second:0, end_second:45,  status:'published'},
+  {id:15, title:'Countries Decide Who Wins $25,000',                channel:'MrBeast',                 youtube_video_id:'wyKNY1_HnTc', thumbnail:'https://i.ytimg.com/vi/wyKNY1_HnTc/hqdefault.jpg', viral_score:87, views:26700000, start_second:0, end_second:45,  status:'published'},
+  {id:16, title:'Romeo Santos - Llevame Contigo (Letra)',           channel:'Romeo Santos',             youtube_video_id:'-qQk6t5v-6Y', thumbnail:'https://i.ytimg.com/vi/-qQk6t5v-6Y/hqdefault.jpg', viral_score:87, views:2100000,  start_second:0, end_second:223, status:'published'},
+  {id:17, title:'Standoff 2 Update 0.38.0 Breakout Trailer',        channel:'Standoff 2',              youtube_video_id:'XKUmKxZYl-w', thumbnail:'https://i.ytimg.com/vi/XKUmKxZYl-w/hqdefault.jpg', viral_score:86, views:780000,   start_second:0, end_second:72,  status:'published'},
+  {id:18, title:'Digital Circus Episode 8 Trailer',                 channel:'Glitch Productions',      youtube_video_id:'4lFnIlH06Sw', thumbnail:'https://i.ytimg.com/vi/4lFnIlH06Sw/hqdefault.jpg', viral_score:86, views:9200000,  start_second:0, end_second:83,  status:'published'},
+  {id:19, title:'Escapa Del Abuelo Malvado - Evil Grandpa Roblox',  channel:'Jondres GC',              youtube_video_id:'jTssEhweaFk', thumbnail:'https://i.ytimg.com/vi/jTssEhweaFk/hqdefault.jpg', viral_score:85, views:410000,   start_second:0, end_second:45,  status:'published'},
+  {id:20, title:'Spider-Man Brand New Day - First Trailer 2026',    channel:'Marvel Concept',          youtube_video_id:'_LAEZPL-gR4', thumbnail:'https://i.ytimg.com/vi/_LAEZPL-gR4/hqdefault.jpg', viral_score:85, views:5300000,  start_second:0, end_second:147, status:'published'},
+  {id:21, title:'Reik - Inolvidable (Letra/Lyrics)',                channel:'Reik',                    youtube_video_id:'2_4zPWgYcLw', thumbnail:'https://i.ytimg.com/vi/2_4zPWgYcLw/hqdefault.jpg', viral_score:84, views:1200000,  start_second:0, end_second:198, status:'published'},
+  {id:22, title:'Sobrevivi 100 Dias 99% Chunks Eliminados Minecraft',channel:'Kenai',                  youtube_video_id:'FLG7HRWcNrY', thumbnail:'https://i.ytimg.com/vi/FLG7HRWcNrY/hqdefault.jpg', viral_score:84, views:620000,   start_second:0, end_second:45,  status:'published'},
+  {id:23, title:'Escaleras de Angel vs Demonio en Minecraft',       channel:'Mikecrack',               youtube_video_id:'WEMMLoUxHMU', thumbnail:'https://i.ytimg.com/vi/WEMMLoUxHMU/hqdefault.jpg', viral_score:83, views:540000,   start_second:0, end_second:45,  status:'published'},
+  {id:24, title:'Minecraft Pro VS 1000 Player Civilization',        channel:'Dream',                   youtube_video_id:'qkXpSSmDKXw', thumbnail:'https://i.ytimg.com/vi/qkXpSSmDKXw/hqdefault.jpg', viral_score:83, views:3000000,  start_second:0, end_second:45,  status:'published'},
+  {id:25, title:'BTS El Regreso - Documental Trailer Netflix',      channel:'Netflix',                 youtube_video_id:'VfNcyWeULjw', thumbnail:'https://i.ytimg.com/vi/VfNcyWeULjw/hqdefault.jpg', viral_score:82, views:1100000,  start_second:0, end_second:118, status:'published'},
+  {id:26, title:'Lukas Graham - 7 Years (Lyrics)',                  channel:'Lukas Graham',            youtube_video_id:'i6f9oRTmMXU', thumbnail:'https://i.ytimg.com/vi/i6f9oRTmMXU/hqdefault.jpg', viral_score:82, views:5800000,  start_second:0, end_second:235, status:'published'},
+  {id:27, title:'Hice un Viaje de Plastilina con Amigos Human Fall', channel:'SilvioGamer',            youtube_video_id:'bOQabnHDlg4', thumbnail:'https://i.ytimg.com/vi/bOQabnHDlg4/hqdefault.jpg', viral_score:81, views:330000,   start_second:0, end_second:45,  status:'published'},
+  {id:28, title:'Salvando a Todos los Monstruos en 99 Noches',      channel:'Mikecrack',               youtube_video_id:'-hGPaYZoPa8', thumbnail:'https://i.ytimg.com/vi/-hGPaYZoPa8/hqdefault.jpg', viral_score:81, views:310000,   start_second:0, end_second:45,  status:'published'},
+  {id:29, title:'The Boys Final Season Trailer - Prime Video',      channel:'Prime Video',             youtube_video_id:'XNQbH1SDPRk', thumbnail:'https://i.ytimg.com/vi/XNQbH1SDPRk/hqdefault.jpg', viral_score:80, views:4500000,  start_second:0, end_second:120, status:'published'},
+  {id:30, title:'Star Wars Maul Shadow Lord Official Trailer',      channel:'Star Wars',               youtube_video_id:'DkVepshZhGc', thumbnail:'https://i.ytimg.com/vi/DkVepshZhGc/hqdefault.jpg', viral_score:80, views:851200,   start_second:0, end_second:90,  status:'published'},
+  {id:31, title:'Codigos Nueva Skin Gratis Para Free Fire',         channel:'TheDonato',               youtube_video_id:'CsyuOJyBt1Q', thumbnail:'https://i.ytimg.com/vi/CsyuOJyBt1Q/hqdefault.jpg', viral_score:79, views:290000,   start_second:0, end_second:45,  status:'published'},
+  {id:32, title:'Maluma - 11 PM (Letra/Lyrics)',                    channel:'Maluma',                  youtube_video_id:'vo5Mukepgsw', thumbnail:'https://i.ytimg.com/vi/vo5Mukepgsw/hqdefault.jpg', viral_score:79, views:3400000,  start_second:0, end_second:185, status:'published'},
+  {id:33, title:'Outcome - Official Trailer Apple TV+',             channel:'Apple TV+',               youtube_video_id:'NQQqInahTAM', thumbnail:'https://i.ytimg.com/vi/NQQqInahTAM/hqdefault.jpg', viral_score:78, views:3000000,  start_second:0, end_second:115, status:'published'},
+  {id:34, title:'Romeo Santos - Necio ft Santana (Letra)',          channel:'Romeo Santos',             youtube_video_id:'kTKLlrC11vM', thumbnail:'https://i.ytimg.com/vi/kTKLlrC11vM/hqdefault.jpg', viral_score:78, views:1800000,  start_second:0, end_second:254, status:'published'},
+  {id:35, title:'Expandiendo El Negocio - Car Dealer Simulator',    channel:'ElChurches',              youtube_video_id:'oecjBBiVRk0', thumbnail:'https://i.ytimg.com/vi/oecjBBiVRk0/hqdefault.jpg', viral_score:77, views:490000,   start_second:0, end_second:45,  status:'published'},
+  {id:36, title:'XO Kitty Season 3 Official Trailer Netflix',       channel:'Netflix',                 youtube_video_id:'vPMcEabBQEU', thumbnail:'https://i.ytimg.com/vi/vPMcEabBQEU/hqdefault.jpg', viral_score:77, views:1500000,  start_second:0, end_second:105, status:'published'},
+  {id:37, title:'Eros Ramazzotti - Otra Como Tu (Letra)',           channel:'Eros Ramazzotti',         youtube_video_id:'vRAbWqpQIkE', thumbnail:'https://i.ytimg.com/vi/vRAbWqpQIkE/hqdefault.jpg', viral_score:76, views:650000,   start_second:0, end_second:243, status:'published'},
+  {id:38, title:'HA-ASH - Lo Aprendi de Ti (Letra)',                channel:'HA-ASH',                  youtube_video_id:'rWqBV861K9M', thumbnail:'https://i.ytimg.com/vi/rWqBV861K9M/hqdefault.jpg', viral_score:76, views:720000,   start_second:0, end_second:220, status:'published'},
+  {id:39, title:'Bhooth Bangla Official Teaser - Akshay Kumar',     channel:'T-Series',                youtube_video_id:'D6sCbIv4N7Y', thumbnail:'https://i.ytimg.com/vi/D6sCbIv4N7Y/hqdefault.jpg', viral_score:75, views:4600000,  start_second:0, end_second:125, status:'published'},
+  {id:40, title:'De $0 a $100 Trillones en Roblox Brainrot',        channel:'ElChurches',              youtube_video_id:'clRAV6IbHJY', thumbnail:'https://i.ytimg.com/vi/clRAV6IbHJY/hqdefault.jpg', viral_score:75, views:270000,   start_second:0, end_second:45,  status:'published'},
+];
+
+async function loadClips(filter) {
+  // Use cache instantly — no fetch needed, prefetchTrending already has data
+  var list = (trendingCache && trendingCache.videos && trendingCache.videos.length)
+    ? trendingCache.videos : DEMO_CLIPS;
+  clips = list;
+  var filtered = filter ? list.filter(function(c){ return c.status === filter; }) : list;
+  renderClips(filtered, 'clips-grid');
+  updateClipsPageHeader(trendingCache ? trendingCache.fetched_at : null);
+}
+
+
+function filterClips() {
+  var f = document.getElementById('clips-filter').value;
+  loadClips(f);
+}
+
+function updateClipsPageHeader(fetchedAt) {
+  var title = document.getElementById('clips-page-title');
+  var sub   = document.getElementById('clips-page-sub');
+  if (title) title.textContent = 'Top 40 Most Viral Videos Worldwide';
+  if (sub && fetchedAt) {
+    var d = new Date(fetchedAt);
+    sub.textContent = 'Updated ' + d.toLocaleDateString('en-US', {weekday:'long',month:'long',day:'numeric'}) + ' — sourced from YouTube trending';
+  } else if (sub) {
+    sub.textContent = 'AI-ranked short-form clips sorted by viral score';
+  }
+}
+
+
+// Global clip registry — lets onclick reference clips by ID safely
+const CLIP_REGISTRY = {};
+
+// Channel color themes for CSS gradient thumbnails
+const CHANNEL_THEMES = {
+  'MKBHD':      {bg:'#0a0a0a', accent:'#e63946', label:'MKBHD'},
+  'Veritasium': {bg:'#0a1628', accent:'#4fc3f7', label:'Veritasium'},
+  'LexFridman': {bg:'#0a0a14', accent:'#b39ddb', label:'Lex Fridman'},
+};
+const DEFAULT_THEME = {bg:'#0d1a2e', accent:'#0aff99', label:'ClipAuto'};
+
+// Apply CSS gradient thumbnail directly to a DOM element — NO data URIs
+function applyThumbStyle(el, clip) {
+  var theme = CHANNEL_THEMES[clip.channel] || DEFAULT_THEME;
+  el.style.background = theme.bg;
+  el.style.position = 'relative';
+  el.style.overflow = 'hidden';
+
+  // Gradient overlay
+  var grad = document.createElement('div');
+  grad.style.cssText = 'position:absolute;inset:0;background:linear-gradient(135deg,'
+    + theme.bg + ' 0%,' + shadeColor(theme.bg, 40) + ' 100%);z-index:0';
+  el.appendChild(grad);
+
+  // Accent line
+  var line = document.createElement('div');
+  line.style.cssText = 'position:absolute;top:0;left:0;width:3px;height:100%;background:'
+    + theme.accent + ';opacity:0.8;z-index:1';
+  el.appendChild(line);
+
+  // Grid pattern using repeating-linear-gradient (pure CSS, no images)
+  var grid = document.createElement('div');
+  grid.style.cssText = 'position:absolute;inset:0;z-index:1;opacity:0.06;'
+    + 'background-image:linear-gradient(' + theme.accent + ' 1px,transparent 1px),'
+    + 'linear-gradient(90deg,' + theme.accent + ' 1px,transparent 1px);'
+    + 'background-size:48px 27px';
+  el.appendChild(grid);
+
+  // Channel label
+  var lbl = document.createElement('div');
+  lbl.textContent = theme.label;
+  lbl.style.cssText = 'position:absolute;top:10px;left:10px;z-index:4;'
+    + 'background:' + theme.accent + '22;border:1px solid ' + theme.accent + '55;'
+    + 'color:' + theme.accent + ';font-size:10px;font-weight:700;padding:2px 8px;'
+    + 'border-radius:999px;font-family:Arial,sans-serif;letter-spacing:0.5px';
+  el.appendChild(lbl);
+
+  // Title text at bottom
+  var title = document.createElement('div');
+  var shortTitle = (clip.title||'').length > 28 ? clip.title.substring(0,26)+'...' : (clip.title||'');
+  title.textContent = shortTitle;
+  title.style.cssText = 'position:absolute;bottom:22px;left:10px;right:10px;z-index:4;'
+    + 'color:#fff;font-size:11px;font-weight:600;font-family:Arial,sans-serif;'
+    + 'text-shadow:0 1px 3px rgba(0,0,0,0.8);line-height:1.3;overflow:hidden;'
+    + 'display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical';
+  el.appendChild(title);
+
+  // Score bar at very bottom
+  var bar = document.createElement('div');
+  bar.style.cssText = 'position:absolute;bottom:0;left:0;z-index:4;'
+    + 'height:3px;width:' + Math.min(clip.viral_score||0,100) + '%;'
+    + 'background:' + theme.accent + ';opacity:0.8';
+  el.appendChild(bar);
+}
+
+function shadeColor(hex, pct) {
+  // Lighten a hex color by pct (0-100)
+  var n = parseInt(hex.replace('#',''), 16);
+  var r = Math.min(255, ((n>>16)&0xff) + pct);
+  var g = Math.min(255, ((n>>8)&0xff)  + pct);
+  var b = Math.min(255, (n&0xff)       + pct);
+  return '#' + [r,g,b].map(function(x){ return ('0'+x.toString(16)).slice(-2); }).join('');
+}
+
+
+function renderClips(list, containerId) {
+  var cId = containerId || 'clips-grid';
+  var el = document.getElementById(cId);
+  if (!el) return;
+  el.innerHTML = '';
+  if (!list || !list.length) {
+    el.innerHTML = '<div class="empty" style="grid-column:1/-1"><div class="empty-icon">✂️</div><div class="empty-title">No clips yet</div><div class="empty-sub">Connect a channel to start generating clips</div></div>';
+    return;
+  }
+  list.forEach(function(c){ CLIP_REGISTRY[c.id] = c; });
+
+  // Build all cards in a DocumentFragment — single DOM insertion = zero layout thrash
+  var frag = document.createDocumentFragment();
+
+  list.forEach(function(c, i) {
+    var dur  = Math.round((c.end_second||0) - (c.start_second||0));
+    var mins = Math.floor(dur/60);
+    var secs = dur % 60;
+    var secStr = secs < 10 ? '0'+secs : ''+secs;
+    var scoreW = Math.min(Math.round(c.viral_score||0), 100);
+
+    var card = document.createElement('div');
+    card.className = 'clip-card';
+    card.onclick = (function(id){ return function(){ openVideoModal(id); }; })(c.id);
+
+    var thumb = document.createElement('div');
+    thumb.className = 'clip-thumb';
+    applyThumbStyle(thumb, c);
+
+    // Real thumbnail — lazy loaded, fades in over CSS gradient
+    if (c.thumbnail) {
+      var img = document.createElement('img');
+      img.alt = '';
+      img.loading = 'lazy';  // browser native lazy load — critical for performance
+      img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;opacity:0;transition:opacity 0.25s';
+      img.onload  = function(){ this.style.opacity = '1'; };
+      img.onerror = function(){ this.style.display = 'none'; };
+      img.src = c.thumbnail;  // set AFTER onload/onerror to avoid race condition
+      thumb.appendChild(img);
+    }
+
+    if (c.viral_score >= 80) {
+      var badge = document.createElement('span');
+      badge.className = c.viral_score >= 90 ? 'viral-tag hot' : 'viral-tag trending';
+      badge.style.cssText = 'position:absolute;top:8px;right:8px;z-index:5';
+      badge.textContent = c.viral_score >= 90 ? 'VIRAL' : 'HOT';
+      thumb.appendChild(badge);
+    }
+
+    if (c.views && c.views > 0) {
+      var views = document.createElement('div');
+      views.style.cssText = 'position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.75);color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;z-index:5;font-weight:500';
+      views.textContent = formatViews(c.views) + ' views';
+      thumb.appendChild(views);
+    }
+
+    var btn = document.createElement('div');
+    btn.className = 'play-btn';
+    btn.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5';
+    btn.innerHTML = '<svg width="11" height="13" viewBox="0 0 11 13" fill="black"><path d="M1 1l9 5.5L1 12V1z"/></svg>';
+    thumb.appendChild(btn);
+    card.appendChild(thumb);
+
+    var info = document.createElement('div');
+    info.className = 'clip-info';
+    info.innerHTML = '<div class="clip-title">' + escHtml(c.title||'') + '</div>'
+      + '<div class="clip-meta">'
+      + '<span class="clip-dur" style="font-size:11px;color:var(--muted2)">' + escHtml(c.channel || mins+':'+secStr) + '</span>'
+      + '<div class="score-wrap"><div class="score-bar"><div class="score-fill" style="width:'+scoreW+'%"></div></div>'
+      + '<span class="score-num">'+Math.round(c.viral_score||0)+'</span></div></div>';
+    card.appendChild(info);
+    frag.appendChild(card);
+  });
+
+  el.appendChild(frag);  // Single reflow for all cards
+}
+
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatViews(n) {
+  if (n >= 1e9) return (n/1e9).toFixed(1)+'B';
+  if (n >= 1e6) return (n/1e6).toFixed(1)+'M';
+  if (n >= 1e3) return (n/1e3).toFixed(0)+'K';
+  return String(n);
+}
+
+
+
+
+function openVideoModal(idOrData) {
+  try {
+    // Accept numeric ID (from onclick) or raw object
+    let c;
+    if (typeof idOrData === 'number' || (typeof idOrData === 'string' && !idOrData.startsWith('{'))) {
+      c = CLIP_REGISTRY[Number(idOrData)];
+      if (!c) { toast('Clip not found', 'error'); return; }
+    } else {
+      c = typeof idOrData === 'string' ? JSON.parse(idOrData) : idOrData;
+    }
+
+    const dur   = Math.round((c.end_second || 0) - (c.start_second || 0));
+    const mins  = Math.floor(dur / 60);
+    const secs  = dur % 60;
+    const startSec = Math.floor(c.start_second || 0);
+    const ytId  = c.youtube_video_id || '';
+
+    document.getElementById('video-modal-title').textContent     = c.title;
+    document.getElementById('video-modal-dur').textContent       = `${mins}:${String(secs).padStart(2,'0')} clip`;
+    document.getElementById('video-modal-score-fill').style.width = Math.min(c.viral_score || 0, 100) + '%';
+    document.getElementById('video-modal-score-num').textContent = Math.round(c.viral_score || 0);
+
+    const ytUrl = ytId ? `https://www.youtube.com/watch?v=${ytId}&t=${startSec}s` : '#';
+    document.getElementById('video-modal-yt-link').href = ytUrl;
+
+    // Build embed URL with all autoplay flags YouTube requires
+    const embedSrc = ytId
+      ? `https://www.youtube.com/embed/${ytId}?start=${startSec}&autoplay=1&mute=0&rel=0&modestbranding=1&enablejsapi=1`
+      : '';
+
+    // Swap iframe src AFTER modal is visible so browser doesn't block it
+    const iframe = document.getElementById('video-modal-iframe');
+    iframe.src = '';                            // reset first
+    document.getElementById('video-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // Small delay lets the modal render before injecting src — improves autoplay rate
+    setTimeout(() => { iframe.src = embedSrc; }, 120);
+
+  } catch(e) {
+    console.error('Video modal error:', e);
+    toast('Could not open clip preview', 'error');
+  }
+}
+
+function closeVideoModal() {
+  document.getElementById('video-modal').classList.remove('open');
+  document.getElementById('video-modal-iframe').src = ''; // stop video
+  document.body.style.overflow = '';
+}
+
+function handleVideoOverlayClick(e) {
+  if (e.target === document.getElementById('video-modal')) closeVideoModal();
+}
+
+// Close video modal on Escape (add to existing keydown listener)
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeModal();
+    closeVideoModal();
+  }
+});
+
+async function publishAll() {
+  toast('Publishing all ready clips…', 'info');
+  setTimeout(() => toast('Clips published to TikTok & Shorts!', 'success'), 1800);
+}
+
+// ── Dashboard ─────────────────────────────────────────────────────────────
+async function loadDashboard() {
+  await loadChannels();
+  // Show DEMO_CLIPS instantly — zero wait, page always loads fast
+  clips = DEMO_CLIPS;
+  clips.forEach(function(c){ CLIP_REGISTRY[c.id] = c; });
+  updateDashStats();
+  renderClips(clips.slice(0, 4), 'dash-clips-grid');
+  // Then silently upgrade with real trending data (5s max wait)
+  try {
+    var src = trendingCache;
+    if (!src) {
+      var res = await fetch('/api/trending', {signal: AbortSignal.timeout(5000)});
+      if (res.ok) { src = await res.json(); trendingCache = src; }
+    }
+    if (src && src.videos && src.videos.length) {
+      clips = src.videos;
+      clips.forEach(function(c){ CLIP_REGISTRY[c.id] = c; });
+      updateDashStats();
+      renderClips(clips.slice(0, 4), 'dash-clips-grid');
+    }
+  } catch(e) {} // keep demo clips if API times out
+}
+
+
+function updateDashStats() {
+  document.getElementById('dash-channels').textContent = channels.length || 5;
+  document.getElementById('dash-clips').textContent = clips.length || DEMO_CLIPS.length;
+  document.getElementById('dash-views').textContent = '2.8B';
+  const scores = (clips.length ? clips : DEMO_CLIPS).map(c => c.viral_score);
+  document.getElementById('dash-score').textContent = scores.length ? Math.round(scores.reduce((a,b)=>a+b,0)/scores.length) : '—';
+}
+
+// ── Auth status ───────────────────────────────────────────────────────────
+async function loadAuthStatus() {
+  try {
+    const res = await fetch(`${API}/auth/status`);
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    ['tiktok','youtube_shorts','instagram'].forEach(p => {
+      const el = document.getElementById(p.replace('_shorts','')+'-status');
+      if (el && data[p]) { el.textContent = 'Connected'; el.className = 'conn-status connected'; }
+    });
+  } catch { /* backend offline */ }
+}
+
+function connectPlatform(platform) {
+  window.open(`/api/auth/${platform}/start`, '_blank');
+  toast(`Opening ${platform} OAuth…`, 'info');
+}
+
+// ── Analytics bars ────────────────────────────────────────────────────────
+function animateBars() {
+  setTimeout(() => {
+    document.querySelectorAll('.bar-fill').forEach(b => {
+      b.style.width = b.dataset.w;
+    });
+  }, 100);
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+function addLog(el, msg, cls) {
+  const line = document.createElement('div');
+  line.className = 'log-line ' + cls;
+  line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+  el.appendChild(line);
+  el.scrollTop = el.scrollHeight;
+}
+
+
+// ── Plans billing toggle ──────────────────────────────────────────────────
+function setBilling(mode) {
+  const isAnnual = mode === 'annual';
+  document.getElementById('bill-monthly').classList.toggle('active', !isAnnual);
+  document.getElementById('bill-annual').classList.toggle('active', isAnnual);
+  const prices = {
+    premium:  { monthly: '$19<sub>/mo</sub>', annual: '$13<sub>/mo</sub>' },
+    deluxe:   { monthly: '$49<sub>/mo</sub>', annual: '$34<sub>/mo</sub>' },
+    ultimate: { monthly: '$99<sub>/mo</sub>', annual: '$69<sub>/mo</sub>' },
+  };
+  ['premium','deluxe','ultimate'].forEach(p => {
+    const el = document.getElementById('price-' + p);
+    const ann = document.getElementById('annual-' + p);
+    if (el) el.innerHTML = '<sup>$</sup>' + prices[p][mode].replace('$','');
+    if (ann) ann.style.display = isAnnual ? 'block' : 'none';
+  });
+}
+
+// ── FAQ accordion ─────────────────────────────────────────────────────────
+function toggleFaq(el) {
+  const answer = el.querySelector('.faq-a');
+  const chevron = el.querySelector('.faq-chevron');
+  const isOpen = answer.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-chevron').forEach(c => c.classList.remove('open'));
+  // Toggle clicked
+  if (!isOpen) {
+    answer.classList.add('open');
+    chevron.classList.add('open');
+  }
+}
+
+
+
+// AbortSignal.timeout polyfill for older mobile browsers (Safari < 17, Android WebView)
+if (!AbortSignal.timeout) {
+  AbortSignal.timeout = function(ms) {
+    var ctrl = new AbortController();
+    setTimeout(function(){ ctrl.abort(); }, ms);
+    return ctrl.signal;
+  };
+}
+
+
+// ── Lazy page rendering — strip inner HTML of hidden pages at startup ──────────
+// This cuts initial DOM from 635 tags to ~150, dramatically improving mobile parse
+(function() {
+  var lazyPages = document.querySelectorAll('.page[data-lazy]');
+  lazyPages.forEach(function(page) {
+    page._lazyContent = page.innerHTML;
+    page.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:60vh;color:var(--muted)"><div style="text-align:center"><div style="font-size:2rem;margin-bottom:.5rem">⏳</div><div style="font-size:13px">Loading...</div></div></div>';
+  });
+})();
+
+// ── Trending prefetch — warms cache silently after paint ──────────────────────
+var trendingCache = null;
+function prefetchTrending() {
+  // Handled by loadDashboard on page init — no duplicate fetch needed
+}
+
+// ── Mobile menu ───────────────────────────────────────────────────────────────
+function createMobileDrawer() {
+  if (document.getElementById('mobile-drawer')) return;
+  var pages = ['dashboard','channels','clips','analytics','how','plans','settings'];
+  var labels = ['Dashboard','Channels','Clips','Analytics','How it Works','Plans','Settings'];
+  var drawer = document.createElement('div');
+  drawer.id = 'mobile-drawer';
+  drawer.className = 'mobile-nav-drawer';
+  pages.forEach(function(p,i){
+    var a = document.createElement('a');
+    a.textContent = labels[i];
+    a.onclick = function(){ nav(p); closeMobileMenu(); };
+    drawer.appendChild(a);
+  });
+  document.body.appendChild(drawer);
+}
+
+function toggleMobileMenu() {
+  createMobileDrawer();
+  var d = document.getElementById('mobile-drawer');
+  d.classList.toggle('open');
+}
+
+function closeMobileMenu() {
+  var d = document.getElementById('mobile-drawer');
+  if (d) d.classList.remove('open');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e){
+  var btn = document.getElementById('mobile-menu-btn');
+  var drawer = document.getElementById('mobile-drawer');
+  if (drawer && btn && !drawer.contains(e.target) && !btn.contains(e.target)){
+    closeMobileMenu();
+  }
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────
+// Pre-register demo clips immediately so UI is interactive right away
+DEMO_CLIPS.forEach(function(c){ CLIP_REGISTRY[c.id] = c; });
+// Paint the page first, then load data (improves First Contentful Paint)
+initRoute();
+// Defer all data fetching until after first paint
+if (window.requestIdleCallback) {
+  requestIdleCallback(function(){ prefetchTrending(); }, {timeout:1000});
+} else {
+  setTimeout(prefetchTrending, 200);
+}
+
+// ── Auth state ────────────────────────────────────────────────────────────
+let currentUser = JSON.parse(localStorage.getItem('ca_user') || 'null');
+
+function openModal(tab = 'signin') {
+  document.getElementById('auth-modal').classList.add('open');
+  switchTab(tab);
+  setTimeout(() => {
+    const f = tab === 'signin' ? 'signin-email' : 'signup-name';
+    document.getElementById(f)?.focus();
+  }, 150);
+}
+
+function closeModal() {
+  document.getElementById('auth-modal').classList.remove('open');
+  document.getElementById('modal-error').classList.remove('show');
+}
+
+function handleModalOverlayClick(e) {
+  if (e.target === document.getElementById('auth-modal')) closeModal();
+}
+
+function switchTab(tab) {
+  const isSignin = tab === 'signin';
+  document.getElementById('tab-signin').classList.toggle('active', isSignin);
+  document.getElementById('tab-signup').classList.toggle('active', !isSignin);
+  document.getElementById('modal-signin-form').style.display = isSignin ? 'block' : 'none';
+  document.getElementById('modal-signup-form').style.display = isSignin ? 'none' : 'block';
+  document.getElementById('modal-sub').textContent = isSignin
+    ? 'Welcome back — sign in to continue'
+    : 'Start clipping for free — no card required';
+  document.getElementById('modal-footer-switch').innerHTML = isSignin
+    ? `Don't have an account? <a onclick="switchTab('signup')">Sign up free</a>`
+    : `Already have an account? <a onclick="switchTab('signin')">Sign in</a>`
+  document.getElementById('modal-error').classList.remove('show');
+}
+
+function showModalError(msg) {
+  const el = document.getElementById('modal-error');
+  el.textContent = msg;
+  el.classList.add('show');
+}
+
+function doSignIn() {
+  const email = document.getElementById('signin-email').value.trim();
+  const pass  = document.getElementById('signin-password').value;
+  if (!email || !pass) { showModalError('Please fill in all fields'); return; }
+  if (!email.includes('@')) { showModalError('Enter a valid email address'); return; }
+  // Simulate auth — replace with real API call to your backend
+  const user = { name: email.split('@')[0], email };
+  setUser(user);
+  closeModal();
+  toast(`Welcome back, ${user.name}! 👋`, 'success');
+}
+
+function doSignUp() {
+  const name  = document.getElementById('signup-name').value.trim();
+  const email = document.getElementById('signup-email').value.trim();
+  const pass  = document.getElementById('signup-password').value;
+  if (!name || !email || !pass) { showModalError('Please fill in all fields'); return; }
+  if (!email.includes('@')) { showModalError('Enter a valid email address'); return; }
+  if (pass.length < 8) { showModalError('Password must be at least 8 characters'); return; }
+  // Simulate auth — replace with real API call
+  const user = { name, email };
+  setUser(user);
+  closeModal();
+  toast(`Account created! Welcome, ${name} 🎉`, 'success');
+}
+
+function signInWithGoogle() {
+  window.open('/api/auth/google/start?user_id=google_user', '_blank');
+  toast('Opening Google sign-in…', 'info');
+  closeModal();
+}
+
+function forgotPassword() {
+  const email = document.getElementById('signin-email').value.trim();
+  if (!email) { showModalError('Enter your email above first'); return; }
+  toast(`Reset link sent to ${email}`, 'success');
+}
+
+function setUser(user) {
+  currentUser = user;
+  localStorage.setItem('ca_user', JSON.stringify(user));
+  document.getElementById('nav-auth').style.display = 'none';
+  document.getElementById('nav-user').style.display = 'block';
+  document.getElementById('user-display-name').textContent = user.name;
+  document.getElementById('user-display-email').textContent = user.email;
+}
+
+function signOut() {
+  currentUser = null;
+  localStorage.removeItem('ca_user');
+  document.getElementById('nav-auth').style.display = 'flex';
+  document.getElementById('nav-user').style.display = 'none';
+  closeUserMenu();
+  toast('Signed out', 'info');
+}
+
+function toggleUserMenu() {
+  document.getElementById('user-menu').classList.toggle('open');
+}
+
+function closeUserMenu() {
+  document.getElementById('user-menu').classList.remove('open');
+}
+
+// Close user menu on outside click
+document.addEventListener('click', e => {
+  const nav = document.getElementById('nav-user');
+  if (nav && !nav.contains(e.target)) closeUserMenu();
+});
+
+// Escape key handled in openVideoModal/closeVideoModal section above
+
+// Restore session on page load
+if (currentUser) setUser(currentUser);
+
+</script>
+</body>
+</html>

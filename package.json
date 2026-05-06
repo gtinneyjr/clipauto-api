@@ -1,0 +1,9 @@
+{
+  "name": "clipauto-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node -e \"console.log('Static Netlify build: public directory is ready')\"",
+    "smoke": "node scripts/smoke-test.js"
+  }
+}
